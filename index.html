@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+<!--
+	Read Only by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Joel Leja</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<section id="header">
+				<header>
+					<span class="image avatar"><img src="images/avatar.jpg" alt="" /></span>
+					<h1 id="logo"><a href="#">Joel Leja</a></h1>
+					<p>Assistant Professor of Astronomy & Astrophysics<br />
+					The Pennsylvania State University  </p>
+				</header>
+				<nav id="nav">
+					<ul>
+						<li><a href="#one" class="active">About</a></li>
+						<li><a href="#two">Research</a></li>
+						<li><a href="#three">Outreach</a></li>
+						<li><a href="#four">Contact</a></li>
+					</ul>
+				</nav>
+				<footer>
+					<ul class="icons">
+						<li><a href="https://ui.adsabs.harvard.edu/#search/q=%20%20author%3A%22leja%2C%20joel%22&sort=date%20desc%2C%20bibcode%20desc&p_=0" style="font-size: 1.5em">ADS</a></li>
+						<li><a href="files/CV.pdf" style="font-size: 1.5em">CV</a></li>
+						<li><a href="https://github.com/jrleja/" class="icon fa-github"><span class="label">Github</span></a></li>
+						<li><a href="mailto:joel.leja@psu.edu" class="icon fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+				</footer>
+			</section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- One -->
+							<section id="one">
+								<div class="image main" data-position="center">
+									<img src="images/banner.jpg" alt="" />
+								</div>
+								<div class="container">
+									<header class="major">
+										<h2>About Me</h2>
+									</header>
+									<p>I am an <b>assistant professor of astronomy & astrophysics</b> at <a href="https://science.psu.edu/astro"> The Pennsylvania State University</a>. My research interests focus on understanding the <b>processes of galaxy formation</b> through the use of large surveys and statistics.</p> 
+
+									<p>In particular, I specialize in fitting flexible models to galaxy photometry and spectra, in building and exploring analytical and theoretical models of galaxy evolution, and in learning about and applying astrostatistics. I've harnessed millions of hours of supercomputer time running specialized code to build a more complete picture of how galaxies form and evolve. I've collaborated on a wide range of projects ranging from understanding the stellar origins of kilonova explosions to developing new methods for wide-field IR surveys. I am very proud to have been afforded the deep privilege of asking the big questions of the Universe!</p>
+								</div>
+							</section>
+
+						<!-- Two -->
+							<section id="two">
+								<div class="container">
+									<header class="major">
+										<h2>Research</h2>
+									</header>
+										<h3> Simple Models of Galaxy Assembly </h3>
+										<p>I started my Ph.D in 2010 at Yale University with <a href="https://www.pietervandokkum.com/">Professor Pieter van Dokkum</a>. This was an exciting time to be studying galaxy evolution. We were in the middle of the first wide, deep, and unbiased (mass-selected) surveys of galaxy evolution at "cosmic noon", spear-headed by ambitious programs with the Hubble Space Telescope such as <a href="https://3dhst.research.yale.edu/">3D-HST</a> and <a href="http://candels.ucolick.org">CANDELS</a>. As a result, astronomers had now surveyed the vast majority of the galaxy population over the majority of cosmic time for the very first time. My advisor and I thought that it was now the ideal time to "put it all together" and write down how galaxies grew up in a simple analytical model. This was the beginning of my thesis.</p>
+										<article>					
+											<a href="https://ui.adsabs.harvard.edu/#abs/2013ApJ...766...33L/abstract" class="image"><img src="images/galaxy_trajectories.jpg" alt="" width="40%" class="center" /></a>
+											<div class="inner">
+												<h4>2013: Processes affecting galaxy evolution at a constant number density</h4>
+												<p></p>
+											</div>
+										</article>
+										<p> However, after constructing and testing our analytical framework, we found a serious problem with this plan. Applying our model to two independent measurements of galaxy mass growth (the current rate of star formation and the current mass locked up in stars) resulted in galaxy growth rates which were <b>systematically offset by a factor of two</b>. This was a big problem. To put it in persepctive, our model suggested that a typical ancestor of the Milky Way would grow by a factor of 4-16 from z~2, a confidence interval so large as to be almost useless!</p>
+										<article>					
+											<a href="https://ui.adsabs.harvard.edu/#abs/2015ApJ...798..115L/abstract" class="image"><img src="images/sfrd.png" alt="" width="40%" class="center" /></a>
+											<div class="inner">
+												<h4>2015: Even after changing the SFR(M), observed masses and SFRs disagreed</h4>
+												<p></p>
+											</div>
+										</article>
+										<h3> A New Method to Measure Galaxy Properties </h3>
+										<p> The problem lay in the models we used to convert galaxy observations into galaxy properties. While these models had had many successes over many years, they were not quite precise enough to answer the questions we needed to answer. We identified three specific problems:
+												<ul>
+													<li>The models did not include enough of the relevant physics, e.g. emission from black holes or nebulae.</li>
+													<li>The assumptions built into them were not physically self-consistent.</li>
+													<li>The models needed to use more clever statistics to translate the weak observational constraints into very broad parameter estimates</li>
+												</ul>
+										Over the end of my Ph.D and during my postdoctoral research, I worked closely with stellar populations experts Professor Charlie Conroy and Dr. Ben Johnson at the Center for Astrophysics | Harvard & Smithsonian to develop a new model addressing these problems: <a href="https://github.com/jrleja/prospector_alpha"><i>Prospector-&alpha;</i></a>, built within the <a href="https://github.com/bd-j/prospector">Prospector Bayesian inference framework</a>. 
+										<article>					
+											<a href="https://ui.adsabs.harvard.edu/#abs/2017ApJ...837..170L/abstract" class="image"><img src="images/animation.gif" alt="" class="bigcenter" /></a>
+											<div class="inner">
+												<h4>2017: Here Prospector fits our new galaxy SED model <i>Prospector-&alpha;</i> to photometry</h4>
+												<p></p>
+											</div>
+										</article>
+										<h3> A New Cosmic Consensus </h3>
+										We applied this new <i>Prospector-&alpha;</i> model to a mass-complete sample of 58,461 galaxies across 0.5 < z < 2.5 from the 3D-HST survey. These new inferences lowered the observed cosmic star formation rate density by ∼0.2 dex and increase the observed stellar mass growth by ∼0.1 dex, finally bringing these two measurements into agreement and implying an older, more quiescent Universe than found in previous work. 
+										<article>					
+											<a href="https://ui.adsabs.harvard.edu/#abs/2018arXiv181205608L/abstract" class="image"><img src="images/delta_sfrd.png" alt="" class="center" /></a>
+											<div class="inner">
+												<h4>2019: A new consensus in the older, more quiescent Universe from <i>Prospector-&alpha;</i> </h4>
+												<p></p>
+											</div>
+										</article>
+
+									</ul>
+								</div>
+							</section>
+
+						<!-- Three -->
+							<section id="three">
+								<div class="container">
+									<header class="major">
+										<h2>Outreach</h2>
+									</header>
+									<p>In additional to my professional mentoring, I believe that knowing more about science and the scientific process improves the lives of everyone (and -- talking to folks about it is lots of fun!).</p>
+									<div class="features">
+										<article>
+											<a href="#" class="image"><img src="images/fsf.jpg" alt="" /></a>
+											<div class="inner">
+												<h4>Flipped Science Fair</h4>
+												<p>I host an annual reverse science fair, where professional researchers present their research to students from local elementary and middle schools. The students serve as “judges” and announce a winner at the end of the event. This encourages and develops outreach skills among researchers while simultaneously engaging the middle school students in a critical form of active learning.</p>
+											</div>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/6points.jpg" alt="" /></a>
+											<div class="inner">
+												<h4>Visiting URJ 6 Points Sci-Tech Academy</h4>
+												<p>Giving talks to middle schoolers at science summer camp about my thesis research, and talking to them in their classrooms!</p>
+											</div>
+										</article>
+									</div>
+								</div>
+							</section>
+
+
+							<section id="four">
+								<div class="container">
+									<header class="major">
+										<h2>Contact</h2>
+									</header>
+									<p>My office is Davey 515. You can reach me electronically at (firstname).(lastname)@psu.edu.
+								</div>
+							</section>
+					</div>
+
+				<!-- Footer -->
+					<section id="footer">
+						<div class="container">
+							<ul class="copyright">
+								<li>&copy; Joel Leja. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
