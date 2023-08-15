@@ -159,9 +159,18 @@ input, select, textarea {
 	h4 {
 		font-size: 1.1em;
 		line-height: 1em;
+		width: 200px;
+		font-weight: 100;
 		text-align: center;
 		color: #666;
 	}
+
+	h5 {
+		font-size: 1.1em;
+		line-height: 1em;
+		color: #666;
+	}
+
 
 	.center {
 	  display: block;
@@ -175,11 +184,6 @@ input, select, textarea {
 	  margin-left: auto;
 	  margin-right: auto;
 	  width: 100%;
-	}
-
-	h5 {
-		font-size: 0.9em;
-		line-height: 1.5em;
 	}
 
 	h6 {
