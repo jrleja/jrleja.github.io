@@ -66,7 +66,7 @@
 									
 									<p> Below is recent press coverage of research done in my group:
 										<ul>
-											<li> <b>June 2024</b>: <a href=https://www.psu.edu/news/research/story/tiny-bright-objects-discovered-dawn-universe-baffle-scientists//>Little red dots in early universe host ancient stellar populations </a> (<a href=https://www.space.com/forbidden-black-holes-jwst-tiny-red-dots/>Space.com</a>, <a href=https://www.universetoday.com/167618/galaxies-filled-with-old-stars-seen-shortly-after-the-big-bang/>Universe Today</a>, <a href=https://skyandtelescope.org/astronomy-news/trio-of-early-galaxies-test-our-ideas-of-cosmic-evolution/>Sky & Telescope</a>, <a href=https://www.iflscience.com/universe-breakers-unexplainable-bright-red-dots-found-in-the-early-universe-75211>IFLScience</a>, <a href=https://www.earth.com/news/mysterious-tiny-red-spots-discovered-in-space/>Earth.com</a>, <a href=https://mashable.com/article/james-webb-space-telescope-oldest-starlight-early-universe>Mashable</a>), and an <a href=https://www.youtube.com/watch?v=enxnHYnW8Uk&t=678s> AAS Journal Series Author Series interview </a>.
+											<li> <b>June 2024</b>: <a href=https://www.psu.edu/news/research/story/tiny-bright-objects-discovered-dawn-universe-baffle-scientists//>Little red dots in early universe baffle scientists </a> (<a href=https://www.space.com/forbidden-black-holes-jwst-tiny-red-dots/>Space.com</a>, <a href=https://www.universetoday.com/167618/galaxies-filled-with-old-stars-seen-shortly-after-the-big-bang/>Universe Today</a>, <a href=https://skyandtelescope.org/astronomy-news/trio-of-early-galaxies-test-our-ideas-of-cosmic-evolution/>Sky & Telescope</a>, <a href=https://www.iflscience.com/universe-breakers-unexplainable-bright-red-dots-found-in-the-early-universe-75211>IFLScience</a>, <a href=https://www.earth.com/news/mysterious-tiny-red-spots-discovered-in-space/>Earth.com</a>, <a href=https://mashable.com/article/james-webb-space-telescope-oldest-starlight-early-universe>Mashable</a>), and an <a href=https://www.youtube.com/watch?v=enxnHYnW8Uk&t=678s> AAS Journal Series Author Series interview </a>.
 
 											<li> <b>Feb 2024</b>: <a href=https://www.psu.edu/news/research/story/cosmic-lighthouses-cleared-primordial-fog-identified-jwst//>'Cosmic lighthouses' that cleared primordial fog identified with JWST </a> (<a href=https://www.popsci.com/science/jwst-spots-two-of-the-most-distant-galaxies-astronomers-have-ever-seen/>PopSci</a>, <a href=https://www.sciencedaily.com/releases/2024/02/240228132053.htm>Science Daily</a>.
 
@@ -94,67 +94,132 @@
 							</section>
 
 						<!-- Two -->
-							<section id="two">
-								<div class="container">
-									<header class="major">
-										<h2>My Research Group</h2>
-									</header>
-										<h3> Current Group Members </h3>
-										<p> My current group members are below:</p>
+						<section id="two">
+						  <div class="container">
+						    <style>
+						      /* Local styles for the people grids (scoped to this section) */
+						      #two .people-grid {
+						        display: grid;
+						        grid-template-columns: repeat(2, minmax(0, 1fr));
+						        gap: 2rem 2rem; /* row gap, column gap */
+						        align-items: start;
+						      }
+						      #two .person {
+						        display: flex;
+						        flex-direction: column;
+						        gap: 0.5rem;
+						      }
+						      #two .person .image-wrap {
+						        width: 100%;
+						        overflow: hidden;
+						        border-radius: 0.5rem;
+						      }
+						      #two .person img {
+						        display: block;
+						        width: 100%;
+						        height: auto;
+						      }
+								#two .person h4 {
+								  margin: 0;
+								  font-weight: 500;
+								  line-height: 1.3;
+								  text-align: center;
+								  width: 100%;
+								}
+						      /* Optional: stack to one column on very small screens */
+						      @media (max-width: 520px) {
+						        #two .people-grid { grid-template-columns: 1fr; }
+						      }
+						    </style>
 
-										<div class="row">
-										  <div class="column">
-										    <a href=https://wangbingjie.github.io/><img src="images/bingjie_wang.jpeg" alt="" style="width:55%"></a>
-										    <div class="inner">
-												<h4> <b> Bingjie Wang, postdoctoral researcher, </b> measuring the properties of high-redshift galaxies and mysterious little red dots using JWST.</h4>
-												<p></p>
-										  	</div>
-										  </div>
-										  <div class="column">
-										    <a href=https://njcleri.github.io/><img src="images/nikko_cleri.png" alt="" style="width:30%"></a>
-										    <div class="inner">
-												<h4> <b> Nikko Cleri, Eberly Postdoctoral Fellow, </b> studying mysterious high-energy ionizing sources in the early universe using JWST.</h4>
-												<p></p>
-										  	</div>
-										  </div>
-										  <div class="column">
-										    <img src="images/yijia_li.jpeg" alt="" style="width:50%">
-										    <div class="inner">
-												<h4> <b> Yijia Li, 7th year graduate student,</b> Bayesian hierarchical modeling and neural net-powered emission line modeling.</h4>
-												<p></p>
-										  	</div>
-										  </div>
-										  <div class="column">
-										    <img src="images/elijah_mathews.jpeg" alt="" style="width:50%">
-										    <div class="inner">
-												<h4> <b> Elijah Mathews, 7th year graduate student,</b> high-dimensional stellar pops fitting (resolved and unresolved) with neural net emulators.</h4>
-												<p></p>
-											</div>
-										  </div>
-										  <div class="column">
-										    <img src="images/emilie_burnham_faith.jpeg" alt="" style="width:50%">
-										    <div class="inner">
-												<h4> <b> Emilie Burnham, 2nd year graduate student,</b> examining distant galaxy populations to understand the short-term timescales of fluctuations in their star formation rates.</h4>
-												<p></p>
-										  	</div>
-										  </div>				
-										</div>		
-										<h3> Former Group Members </h3>
-										<p> Group members who have graduated and gone on to other positions.</p>
-										<div class="row">
-										  <div class="column">
-										    <img src="images/william_bowman.jpeg" alt="" style="width:24%">
-										  </div>		
-										</div>
-										<h4> <b> Will Bowman </b> - Ph.D Penn State 2022; current postdoc at Yale University </h4>
-										<div class="row">
-										  <div class="column">
-										    <img src="images/Junyu Zhang.jpeg" alt="" style="width:50%">
-										  </div>		
-										</div>
-										<h4> <b> Junyu Zhang </b> - BS Astronomy & Astrophysics Penn State 2023; current graduate student at University of Arizona </h4>
-								</div>
-							</section>
+						    <header class="major">
+						      <h2>My Research Group</h2>
+						    </header>
+
+						    <h3>Current Group Members</h3>
+						    <div class="people-grid">
+						      <article class="person">
+						        <div class="image-wrap">
+						          <a href="https://njcleri.github.io/">
+						            <img src="images/nikko_cleri.png" alt="Photo of Nikko Cleri">
+						          </a>
+						        </div>
+						        <h4><b>Nikko Cleri, Eberly Postdoctoral Fellow,</b> studying mysterious high-energy ionizing sources in the early universe using JWST.</h4>
+						      </article>
+
+						      <article class="person">
+						        <div class="image-wrap">
+						          <a href="https://jakobhelton.github.io/">
+						            <img src="images/jakob_helton.jpg" alt="Photo of Jakob Helton">
+						          </a>
+						        </div>
+						        <h4><b>Jakob Helton, Evolving Universe Postdoctoral Fellow,</b> aiming to understand physical conditions in the most distant galaxies in the early universe, such as JADES-z14.</h4>
+						      </article>
+
+						      <article class="person">
+						        <div class="image-wrap">
+						          <img src="images/elijah_mathews.jpeg" alt="Photo of Elijah Mathews">
+						        </div>
+						        <h4><b>Elijah Mathews, graduate student,</b> high-dimensional stellar pops fitting (resolved and unresolved) with neural net emulators.</h4>
+						      </article>
+
+						      <article class="person">
+						        <div class="image-wrap">
+						          <img src="images/emilie_burnham_faith.jpeg" alt="Photo of Emilie Burnham">
+						        </div>
+						        <h4><b>Emilie Burnham, graduate student,</b> examining distant galaxy populations to understand the short-term timescales of fluctuations in their star formation rates.</h4>
+						      </article>
+
+						      <article class="person">
+						        <div class="image-wrap">
+						          <img src="images/agrim_gupta.jpeg" alt="Photo of Agrim Gupta">
+						        </div>
+						        <h4><b>Agrim Gupta, graduate student,</b> stellar populations modeling in the JWST UNCOVER deep field Abell 2744, focusing on the star formation rate of early quiescent galaxies.</h4>
+						      </article>
+
+						      <article class="person">
+						        <div class="image-wrap">
+						          <img src="images/marta_laska.jpeg" alt="Photo of Marta Laska">
+						        </div>
+						        <h4><b>Marta Laska, graduate student,</b> modeling distant galaxies.</h4>
+						      </article>
+						    </div>
+
+						    <h3 style="margin-top: 2.5rem;">Former Group Members</h3>
+						    <div class="people-grid">
+						      <article class="person">
+						        <div class="image-wrap">
+						          <a href="https://wangbingjie.github.io/">
+						            <img src="images/bingjie_wang.jpeg" alt="Photo of Bingjie Wang">
+						          </a>
+						        </div>
+						        <h4><b>Bingjie Wang</b>, postdoctoral researcher 2022–2025, little red dots and ML-powered inference → Hubble Fellow at Princeton University.</h4>
+						      </article>
+
+						      <article class="person">
+						        <div class="image-wrap">
+						          <img src="images/yijia_li.jpeg" alt="Photo of Yijia Li">
+						        </div>
+						        <h4><b>Yijia Li</b>, Ph.D Penn State 2025, neural net-powered emission line modeling, <a href="https://github.com/yi-jia-li/cue/">cue</a></h4> author --> postdoctoral researcher at Northwestern University.
+						      </article>
+
+						      <article class="person">
+						        <div class="image-wrap">
+						          <img src="images/william_bowman.jpeg" alt="Photo of Will Bowman">
+						        </div>
+						        <h4><b>Will Bowman</b> — Ph.D Penn State 2022, covariant data in galaxy inference → postdoctoral researcher at Yale University.</h4>
+						      </article>
+
+						      <article class="person">
+						        <div class="image-wrap">
+						          <img src="images/Junyu Zhang.jpeg" alt="Photo of Junyu Zhang">
+						        </div>
+						        <h4><b>Junyu Zhang</b> — BS Astronomy &amp; Astrophysics Penn State 2023, finding rejuvenating galaxies → Astronomy &amp; Astrophysics graduate student at University of Arizona.</h4>
+						      </article>
+						    </div>
+						  </div>
+						</section>
+
 
 						<!-- Three -->
 							<section id="three">
