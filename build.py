@@ -39,11 +39,23 @@ TEMPLATES = ROOT / "templates"
 # Markdown extensions: smart typography, and tables for the alumni list.
 MD = markdown.Markdown(extensions=["smarty", "tables", "attr_list"])
 
+# Front-matter / YAML fields that are prose and so get rendered as inline Markdown,
+# letting a caption carry emphasis or a link. Templates must print these with |safe.
+MARKDOWN_FIELDS = ("caption",)
+
 
 def render_markdown(text):
     """Markdown -> HTML. Reset between calls so state can't leak."""
     MD.reset()
     return MD.convert(text.strip())
+
+
+def render_markdown_fields(entry):
+    """Render the prose fields listed in MARKDOWN_FIELDS in place, as inline HTML."""
+    for field in MARKDOWN_FIELDS:
+        if entry.get(field):
+            entry[field] = render_inline(render_markdown(str(entry[field])))
+    return entry
 
 
 def render_inline(html):
@@ -98,7 +110,9 @@ def load_collection(dirname):
         meta, body = split_front_matter(path)
         html = render_markdown(body)
         items.append(
-            {**meta, "html": html, "inline": render_inline(html), "source": path.name}
+            render_markdown_fields(
+                {**meta, "html": html, "inline": render_inline(html), "source": path.name}
+            )
         )
     items.sort(key=lambda d: (d.get("order", 10**6), d["source"]))
     return items
@@ -114,39 +128,69 @@ def load_data(name):
         raise FileNotFoundError(f"content/{name} is referenced by site.yml but missing")
     data = yaml.safe_load(path.read_text(encoding="utf-8")) or []
     for entry in data:
-        if isinstance(entry, dict) and "body" in entry:
-            entry["html"] = render_markdown(entry["body"])
+        if not isinstance(entry, dict):
+            continue
+        if "body" in entry:
+            html = render_markdown(entry["body"])
+            entry["html"] = html
+            entry["inline"] = render_inline(html)
+        render_markdown_fields(entry)
     return data
+
+
+def load_source(source):
+    """Load one source, inferring its kind from its name.
+
+    Returns (kind, value) where kind is 'page', 'data' or 'collection':
+      'foo.md'  -> a prose page       ('page',       {..., 'html': ...})
+      'foo.yml' -> a list of records  ('data',       [ {...}, ... ])
+      'foo'     -> a directory of .md ('collection', [ {...}, ... ])
+    """
+    if source.endswith(".md"):
+        return "page", load_page(source)
+    if source.endswith(".yml"):
+        return "data", load_data(source)
+    return "collection", load_collection(source)
 
 
 def build_sections(spec):
     """Turn site.yml's `sections:` list into rendered section dicts.
 
-    Each entry names a template in templates/sections/ and one source. The source
-    kind is inferred: a directory name is a collection, a .yml is a data list, a
-    .md is prose.
+    Each entry names a template in templates/sections/ plus either:
+      source:   one source, exposed to the template as `section.entries`
+                (or as `section.body` when it is a .md prose page), or
+      sources:  a mapping of name -> source, each exposed as `section.<name>`,
+                for sections that combine several kinds of content
 
-    The list is called `entries`, NOT `items`: in a Jinja template `section.items`
-    silently resolves to the dict's built-in .items method instead of the key, and
-    the loop then fails with an unhelpful TypeError. Do not rename it back.
+    The default list is called `entries`, NOT `items`: in a Jinja template
+    `section.items` silently resolves to the dict's built-in .items method instead
+    of the key, and the loop then fails with an unhelpful TypeError. Likewise avoid
+    naming a source `keys`, `values`, `get`, `copy` or `update`.
     """
+    reserved = set(dir({}))
     sections = []
     for entry in spec:
-        source = entry.get("source")
         section = dict(entry)
-        if source is None:
-            section["entries"], section["body"] = [], ""
-        elif source.endswith(".md"):
-            page = load_page(source)
-            section.setdefault("title", page.get("title"))
-            section["body"] = page["html"]
-            section["entries"] = []
-        elif source.endswith(".yml"):
-            section["entries"] = load_data(source)
-            section["body"] = ""
-        else:
-            section["entries"] = load_collection(source)
-            section["body"] = ""
+        section.setdefault("body", "")
+        section.setdefault("entries", [])
+
+        if entry.get("source"):
+            kind, value = load_source(entry["source"])
+            if kind == "page":
+                section.setdefault("title", value.get("title"))
+                section["body"] = value["html"]
+            else:
+                section["entries"] = value
+
+        for name, source in (entry.get("sources") or {}).items():
+            if name in reserved:
+                raise ValueError(
+                    f"section '{entry.get('id')}': source name '{name}' collides with a "
+                    f"dict method and would be unreachable in the template"
+                )
+            kind, value = load_source(source)
+            section[name] = value["html"] if kind == "page" else value
+
         sections.append(section)
     return sections
 
@@ -175,11 +219,27 @@ def main():
 
     out = ROOT / args.out
     out.write_text(html, encoding="utf-8")
-    n_entries = sum(len(s["entries"]) for s in sections)
+
+    # Count every list-valued source, not just the one named `entries`, so a section
+    # using `sources:` is not silently reported as empty.
+    n_entries = sum(
+        len(v) for s in sections for k, v in s.items() if isinstance(v, list)
+    )
     print(
         f"wrote {out.relative_to(ROOT)}  "
         f"({len(html):,} bytes, {len(sections)} sections, {n_entries} entries)"
     )
+
+    # Placeholder text must never reach the published page.
+    if "TODO" in html:
+        todos = [
+            path.name
+            for path in sorted(CONTENT.rglob("*.md")) + sorted(CONTENT.rglob("*.yml"))
+            if "TODO" in path.read_text(encoding="utf-8")
+        ]
+        print(f"WARNING: TODO placeholders still present in: {', '.join(todos)}")
+        if out.name == "index.html":
+            sys.exit("refusing to publish index.html with TODO placeholders in it")
 
 
 if __name__ == "__main__":

@@ -9,9 +9,38 @@ every session.
 
 ## Status
 
-- **Next session:** 3 — port the remaining content into `content/`
+- **Next session:** 4 — new stylesheet
 - **Live site content:** Sept 2025, plus the Session 1 fixes
 - **Last updated:** 2026-08-17
+
+**Session 3 — done.** All content is now data. Six sections build from `content/`:
+Intro, Leja Group, Research, Press, Outreach, Contact. `preview.html` validates as
+well-formed HTML; the live `index.html` has six structural errors (unclosed `<li>`s in
+the press list, an unclosed `<p>` in Research) that the port fixes for free.
+
+Deliberate changes from the live page, all reversible:
+
+- **Press is its own nav section** instead of a bullet list buried at the end of Intro.
+- **Alumni are a text list**, grouped into grads/postdocs and undergrads, expanded from
+  4 people to the full 17 from CV.tex.
+- **Session 8 is now mostly done**: all 9 current members are in, with the five new
+  photos. What remains is the three TODO blurbs below.
+- Typos fixed: "persepctive" → "perspective", "In additional to" → "In addition to".
+- The 2019 figure now links the published paper (`2019ApJ...877..140L`) rather than the
+  superseded arXiv preprint.
+- **Needs your approval:** the sidebar ADS link now points at your curated public
+  library (`G3CNFVQISayWjz8Fz-9n5g`, the one your CV calls the complete list) instead of
+  an author-name search. Revert in `content/site.yml` if you prefer the search.
+
+`build.py` gained three things: a section can draw on several sources via `sources:`;
+`caption:` fields render Markdown; and the build **refuses to write `index.html` while
+any TODO placeholder remains**, so Session 7 cannot ship filler.
+
+### Blocked on you — three blurbs
+
+`content/group/lishan-shi.md`, `connor-luettgenau.md` and `allyson-garcia.md` each
+contain a one-line `TODO:`. I don't know what these three work on and won't invent it.
+One sentence each, in the style of the others, and Session 8 closes.
 
 **Session 2 — done.** `build.py` + `templates/` + `content/site.yml` exist and build
 green. Intro and Contact are ported and wired; the group / research / press / talks /

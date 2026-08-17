@@ -1,0 +1,111 @@
+# Former group members, rendered as a text list by templates/sections/group.html.
+#
+# Fields, all optional except name and group:
+#   name     as it should be displayed
+#   group    the subheading to file them under
+#   role     their position while in the group
+#   years    span in the group
+#   body     what they worked on -- Markdown, so it may contain links
+#   outcome  where they went next; rendered after an arrow
+#   link     personal site
+#
+# Roster and dates come from ~/Dropbox/CV/CV.tex. Reverse chronological.
+
+- name: Bingjie Wang
+  group: Graduate Students & Postdocs
+  role: postdoctoral researcher
+  years: 2022–2025
+  body: little red dots and ML-powered inference
+  outcome: Hubble Fellow at Princeton University
+  link: https://wangbingjie.github.io/
+
+- name: Yijia Li
+  group: Graduate Students & Postdocs
+  role: Ph.D. Penn State 2025
+  years: 2020–2025
+  body: neural net-powered emission line modeling, author of [cue](https://github.com/yi-jia-li/cue/)
+  outcome: postdoctoral researcher at Northwestern University
+
+- name: Kanishk Pandey
+  group: Graduate Students & Postdocs
+  role: graduate student
+  years: 2023–2024
+
+- name: Gautam Nagaraj
+  group: Graduate Students & Postdocs
+  role: graduate student
+  years: 2021–2023
+  outcome: postdoctoral researcher at EPFL
+
+- name: Will Bowman
+  group: Graduate Students & Postdocs
+  role: Ph.D. Penn State 2022
+  years: 2021–2022
+  body: covariant data in galaxy inference
+  outcome: postdoctoral researcher at Yale University
+
+- name: Imad Pasha
+  group: Graduate Students & Postdocs
+  role: graduate student, Yale University
+  years: 2019–2020
+
+- name: Jonathan Cohn
+  group: Graduate Students & Postdocs
+  role: graduate student, Texas A&M
+  years: 2017–2018
+
+- name: Senti Bo
+  group: Undergraduate Students
+  role: Nanjing University
+  years: 2025
+
+- name: Si Rui
+  group: Undergraduate Students
+  role: Nanjing University
+  years: 2025
+
+- name: Nathan Cristello
+  group: Undergraduate Students
+  role: Penn State
+  years: 2023–2024
+
+- name: Junyu Zhang
+  group: Undergraduate Students
+  role: B.S. Astronomy & Astrophysics Penn State 2023
+  years: 2021–2023
+  body: finding rejuvenating galaxies, published in ApJ
+  outcome: Astronomy & Astrophysics graduate student at the University of Arizona
+
+- name: Liam Schwartz
+  group: Undergraduate Students
+  role: Penn State
+  years: 2021
+
+- name: Leah Zuckerman
+  group: Undergraduate Students
+  role: Brown University
+  years: 2020–2021
+  body: published in ApJ
+
+- name: Yuxin Dong
+  group: Undergraduate Students
+  role: Brown University
+  years: 2019–2021
+  body: published in ApJ
+
+- name: Evan Haze Nunez
+  group: Undergraduate Students
+  role: Smithsonian Astrophysical Observatory REU
+  years: 2018
+  body: poster at the AAS
+
+- name: Michael Bueno
+  group: Undergraduate Students
+  role: Banneker Institute
+  years: 2017
+  body: poster at the AAS
+
+- name: Christopher Bradshaw
+  group: Undergraduate Students
+  role: undergraduate thesis, Yale University
+  years: 2014–2015

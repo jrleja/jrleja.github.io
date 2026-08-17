@@ -1,0 +1,23 @@
+{# Image-and-text feature blocks, used for Outreach. One file per item in the
+   section's collection; `image:` is optional and `url:` makes the image a link. #}
+{% if section.body %}
+{{ section.body|safe }}
+{% endif %}
+
+<div class="features">
+{% for item in section.entries %}
+	<article>
+		{% if item.get('image') %}
+		{% if item.get('url') %}
+		<a href="{{ item.url }}" class="image"><img src="{{ item.image }}" alt="{{ item.get('alt', item.title) }}" /></a>
+		{% else %}
+		<span class="image"><img src="{{ item.image }}" alt="{{ item.get('alt', item.title) }}" /></span>
+		{% endif %}
+		{% endif %}
+		<div class="inner">
+			<h4>{{ item.title }}</h4>
+			{{ item.html|safe }}
+		</div>
+	</article>
+{% endfor %}
+</div>

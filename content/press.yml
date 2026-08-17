@@ -1,0 +1,111 @@
+# Press coverage, newest first, rendered by templates/sections/press.html.
+#
+# Fields:
+#   date      displayed verbatim, e.g. "June 2024"
+#   title     the headline
+#   url       primary link (optional)
+#   outlet    attribution, e.g. "NASA/STScI/PSU Release" (optional)
+#   coverage  list of {name, url} secondary pickups (optional)
+#   body      extra Markdown prose appended to the entry (optional)
+#
+# Ported from the pre-rebuild index.html in Session 3. Structuring it here fixed the
+# unquoted href= values and an unclosed parenthesis that were in the hand-written HTML.
+# Session 12 adds 2024–2026 coverage, starting with the 2025 PSU/Max Planck release
+# "Mysterious red dots in early universe may be black hole star atmospheres".
+
+- date: June 2024
+  title: Little red dots in early universe baffle scientists
+  url: https://www.psu.edu/news/research/story/tiny-bright-objects-discovered-dawn-universe-baffle-scientists
+  coverage:
+    - name: Space.com
+      url: https://www.space.com/forbidden-black-holes-jwst-tiny-red-dots
+    - name: Universe Today
+      url: https://www.universetoday.com/167618/galaxies-filled-with-old-stars-seen-shortly-after-the-big-bang/
+    - name: Sky & Telescope
+      url: https://skyandtelescope.org/astronomy-news/trio-of-early-galaxies-test-our-ideas-of-cosmic-evolution/
+    - name: IFLScience
+      url: https://www.iflscience.com/universe-breakers-unexplainable-bright-red-dots-found-in-the-early-universe-75211
+    - name: Earth.com
+      url: https://www.earth.com/news/mysterious-tiny-red-spots-discovered-in-space/
+    - name: Mashable
+      url: https://mashable.com/article/james-webb-space-telescope-oldest-starlight-early-universe
+  body: >-
+    and an
+    [AAS Journal Series Author Series interview](https://www.youtube.com/watch?v=enxnHYnW8Uk&t=678s).
+
+- date: Feb 2024
+  title: "'Cosmic lighthouses' that cleared primordial fog identified with JWST"
+  url: https://www.psu.edu/news/research/story/cosmic-lighthouses-cleared-primordial-fog-identified-jwst
+  coverage:
+    # The hand-written HTML also listed PopSci here, but with the Nov 2023 item's URL.
+    # Dropped rather than guessed -- Session 12 should find the real link.
+    - name: Science Daily
+      url: https://www.sciencedaily.com/releases/2024/02/240228132053.htm
+
+- date: Nov 2023
+  title: JWST discovery of the second- and fourth-most distant galaxies
+  url: https://www.psu.edu/news/eberly-college-science/story/second-most-distant-galaxy-discovered-using-james-webb-space-telescope
+  coverage:
+    - name: PopSci
+      url: https://www.popsci.com/science/jwst-spots-two-of-the-most-distant-galaxies-astronomers-have-ever-seen/
+    - name: Business Insider
+      url: https://www.businessinsider.com/scientists-james-webb-telescope-megacluster-galaxies-magnifying-glass-discovery-2023-11
+    - name: Space.com
+      url: https://www.space.com/james-webb-space-telescope-distant-galaxies
+    - name: Newsweek
+      url: https://www.newsweek.com/giant-peanut-galaxy-discovered-33-billion-light-years-away-1843148
+    - name: Daily Mail
+      url: https://www.dailymail.co.uk/sciencetech/article-12743647/james-webb-space-telescope-nasa-distant-galaxy-images.html
+    - name: MSN
+      url: https://www.msn.com/en-in/news/techandscience/nasa-s-james-webb-space-telescope-snaps-one-of-the-most-distant-galaxies-ever-it-is-330-mn-years-old/ar-AA1jUggi
+
+- date: July 2023
+  title: Cosmic Front
+  url: https://www.imdb.com/title/tt3898510/
+  body: >-
+    Featured in an hour-long documentary on JWST's first year of science,
+    NHK / Japanese National Television.
+
+- date: March 2023
+  title: Machine learning in astrophysics
+  url: https://science.psu.edu/news/machine-learning-takes-starring-role-in-exploring-universe
+  outlet: PSU ICDS Feature Story
+
+- date: Feb 2023
+  title: Massive early galaxies defy prior understanding of the universe
+  url: https://www.psu.edu/news/research/story/discovery-massive-early-galaxies-defies-prior-understanding-universe/
+  outlet: ANU/PSU/NASA/Nature
+  coverage:
+    - name: NPR
+      url: https://www.npr.org/2023/02/22/1158793897/webb-telescope-huge-early-galaxies-big-bang
+    - name: the Guardian
+      url: https://www.theguardian.com/science/2023/feb/22/universe-breakers-james-webb-telescope-detects-six-ancient-galaxies
+    - name: the Atlantic
+      url: https://www.theatlantic.com/science/archive/2023/03/webb-space-telescope-discovers-galaxies-astronomy/673274/
+    - name: CNN
+      url: https://www.cnn.com/2023/02/22/world/webb-telescope-massive-early-galaxies-scn/
+    - name: WTAJ
+      url: https://www.wtaj.com/news/local-news/psu-professor-this-discovery-changes-how-the-universe-is-viewed/
+    - name: Fraser Cain interview
+      url: https://www.youtube.com/watch?v=xPK9kF2tqfk
+  body: plus a KUSI television interview.
+
+- date: Feb 2023
+  title: NASA's James Webb Telescope uncovers new details in Pandora's Cluster
+  url: https://www.psu.edu/news/eberly-college-science/story/nasas-james-webb-telescope-uncovers-new-details-pandoras-cluster/
+  outlet: NASA/STScI/PSU Release
+
+- date: Nov 2022
+  title: Bright light from early universe 'opens new chapter in astronomy'
+  url: https://www.psu.edu/news/research/story/bright-light-early-universe-opens-new-chapter-astronomy/
+  outlet: NASA/STScI/PSU Release
+
+- date: Nov 2022
+  title: Tracing the origins of rare, cosmic explosions
+  url: https://science.psu.edu/news/Leja11-2022/
+  outlet: Keck/Northwestern/PSU Release
+
+- date: Sep 2021
+  title: Early, massive galaxies running on empty
+  url: https://science.psu.edu/news/Leja9-2021/
+  outlet: STScI/ALMA/PSU Release

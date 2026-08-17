@@ -1,18 +1,21 @@
-{# Group members. Current members get a photo grid; alumni get a compact list,
-   because that list only grows and the outcome is the part worth reading.
-   Optional front-matter fields are read with .get() so a missing one is simply
-   omitted -- build.py runs with StrictUndefined to catch genuine typos. #}
-{% set current = section.entries|selectattr("status", "equalto", "current")|list %}
-{% set former = section.entries|selectattr("status", "equalto", "former")|list %}
+{# Group members.
 
+   Current members come from content/group/*.md (one file per person: photo plus a
+   prose blurb) and render as a photo grid.
+
+   Alumni come from content/alumni.yml and render as a compact text list, because
+   that list only grows and the part worth reading is the outcome.
+
+   Optional fields are read with .get() -- the build runs with StrictUndefined,
+   which catches typos but raises on any genuinely absent key. #}
 {% if section.body %}
 {{ section.body|safe }}
 {% endif %}
 
-{% if current %}
+{% if section.current %}
 <h3>Current Group Members</h3>
 <div class="people-grid">
-	{% for person in current %}
+	{% for person in section.current %}
 	<article class="person">
 		<div class="image-wrap">
 			{% if person.get('link') %}<a href="{{ person.link }}">{% endif %}
@@ -25,13 +28,14 @@
 </div>
 {% endif %}
 
-{% if former %}
+{% if section.alumni %}
 <h3 class="alumni-heading">Former Group Members</h3>
+{% for group, people in section.alumni|groupby('group') %}
+<h4>{{ group }}</h4>
 <ul class="alumni">
-	{% for person in former %}
-	<li>
-		<b>{% if person.get('link') %}<a href="{{ person.link }}">{{ person.name }}</a>{% else %}{{ person.name }}{% endif %}</b>{% if person.get('role') %} &mdash; {{ person.role }}{% endif %}{% if person.get('years') %}, {{ person.years }}{% endif %}{% if person.inline %} &mdash; {{ person.inline|safe }}{% endif %}{% if person.get('outcome') %} &rarr; {{ person.outcome }}{% endif %}
-	</li>
+	{% for person in people %}
+	<li><b>{% if person.get('link') %}<a href="{{ person.link }}">{{ person.name }}</a>{% else %}{{ person.name }}{% endif %}</b>{% if person.get('role') %}, {{ person.role }}{% endif %}{% if person.get('years') %}, {{ person.years }}{% endif %}{% if person.get('inline') %} &mdash; {{ person.inline|safe }}{% endif %}{% if person.get('outcome') %} &rarr; {{ person.outcome }}{% endif %}</li>
 	{% endfor %}
 </ul>
+{% endfor %}
 {% endif %}

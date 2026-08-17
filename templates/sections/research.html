@@ -11,14 +11,15 @@
 {{ topic.html|safe }}
 	{% if topic.get('figure') %}
 <article>
+	{% set alt = topic.get('alt', topic.get('title', 'Figure')) %}
 	{% if topic.get('paper') %}
-	<a href="{{ topic.paper }}" class="image"><img src="{{ topic.figure }}" alt="{{ topic.get('caption', '') }}" class="center" style="width:100%" /></a>
+	<a href="{{ topic.paper }}" class="image"><img src="{{ topic.figure }}" alt="{{ alt }}" class="center" style="width:100%" /></a>
 	{% else %}
-	<span class="image"><img src="{{ topic.figure }}" alt="{{ topic.get('caption', '') }}" class="center" style="width:100%" /></span>
+	<span class="image"><img src="{{ topic.figure }}" alt="{{ alt }}" class="center" style="width:100%" /></span>
 	{% endif %}
 	{% if topic.get('caption') %}
 	<div class="inner">
-		<h4>{{ topic.caption }}</h4>
+		<h4>{{ topic.caption|safe }}</h4>
 	</div>
 	{% endif %}
 </article>
