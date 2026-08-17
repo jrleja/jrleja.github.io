@@ -1,0 +1,20 @@
+{# Talks and media from content/talks.yml. Entries are grouped by `group:` so
+   public lectures, invited science talks, and media can share one section without
+   the template knowing their names. Within a group, order follows the file. #}
+{% if section.body %}
+{{ section.body|safe }}
+{% endif %}
+
+{% for group, items in section.entries|groupby('group') %}
+<h3>{{ group }}</h3>
+<ul class="talks">
+	{% for item in items %}
+	<li>
+		{% if item.get('url') %}<a href="{{ item.url }}">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %}
+		{% if item.get('venue') %} &mdash; {{ item.venue }}{% endif %}
+		{% if item.get('note') %} <i>({{ item.note }})</i>{% endif %}
+		{% if item.get('date') %} <span class="date">{{ item.date }}</span>{% endif %}
+	</li>
+	{% endfor %}
+</ul>
+{% endfor %}

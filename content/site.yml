@@ -1,0 +1,61 @@
+# Site-wide settings for jrleja.github.io. Rebuild with: python3 build.py
+#
+# `sections:` is the whole page structure, in order. Each entry needs:
+#   id        the anchor and nav target
+#   label     the sidebar nav text
+#   title     the <h2> heading
+#   template  a file in templates/sections/ (prose, group, research, press, talks, pubs)
+#   source    a .md file (prose), a directory (one file per item), or a .yml (a list)
+#
+# Sections are added here as they are ported -- see REVAMP.md, Session 3.
+
+# Write plain text here, never HTML entities: templates escape on output, so a
+# literal "&" is correct and "&amp;" would render as "&amp;amp;".
+name: Joel Leja
+titles:
+  - Associate Professor of Astronomy & Astrophysics
+  - Dr. Keiko Miwa Ross Mid-Career Professor
+affiliation: The Pennsylvania State University
+
+description: >-
+  Joel Leja is an associate professor of astronomy and astrophysics at Penn State,
+  studying galaxy formation by combining deep JWST surveys with statistics and
+  machine learning.
+
+avatar: images/avatar.jpg
+banner: images/banner.jpg
+stylesheet: assets/css/main.css
+
+links:
+  - label: ADS
+    url: https://ui.adsabs.harvard.edu/public-libraries/G3CNFVQISayWjz8Fz-9n5g
+  - label: CV
+    url: files/CV.pdf
+  - label: Github
+    url: https://github.com/jrleja/
+    icon: fa-github
+  - label: Email
+    url: mailto:joel.leja@psu.edu
+    icon: fa-envelope
+
+scripts:
+  - assets/js/jquery.min.js
+  - assets/js/jquery.scrollex.min.js
+  - assets/js/jquery.scrolly.min.js
+  - assets/js/browser.min.js
+  - assets/js/breakpoints.min.js
+  - assets/js/util.js
+  - assets/js/main.js
+
+sections:
+  - id: intro
+    label: Intro
+    title: Intro
+    template: prose
+    source: intro.md
+
+  - id: contact
+    label: Contact
+    title: Contact
+    template: prose
+    source: contact.md

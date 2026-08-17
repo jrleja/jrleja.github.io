@@ -9,9 +9,26 @@ every session.
 
 ## Status
 
-- **Next session:** 2 — write `build.py` + templates
+- **Next session:** 3 — port the remaining content into `content/`
 - **Live site content:** Sept 2025, plus the Session 1 fixes
-- **Last updated:** 2026-08-14
+- **Last updated:** 2026-08-17
+
+**Session 2 — done.** `build.py` + `templates/` + `content/site.yml` exist and build
+green. Intro and Contact are ported and wired; the group / research / press / talks /
+pubs templates are written and smoke-tested but not yet wired into `site.yml` — that's
+Session 3, which is now pure content work.
+
+Output goes to **`preview.html`** (gitignored) until Session 7, so the live
+`index.html` cannot be touched by accident. Two gotchas found and fixed, both worth
+knowing before editing templates:
+
+- The section list is `section.entries`, **never** `section.items` — Jinja resolves
+  `.items` to the dict method and fails with an unhelpful `TypeError`.
+- Content files carry **plain text, never HTML entities**. Templates escape on output,
+  so `&` is correct and `&amp;` renders as `&amp;amp;`.
+
+Optional front-matter fields are read with `.get()` because the build runs with
+`StrictUndefined` (which catches typos in `site.yml` but raises on any missing key).
 
 **Session 1 — done.** Fixed B2 (the broken `</h4>`) and B3 (Early → Mid-Career), and
 refreshed `files/CV.pdf` to the May 2026 version. Added `.gitignore` and a reusable

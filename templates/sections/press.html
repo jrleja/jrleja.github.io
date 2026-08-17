@@ -1,0 +1,28 @@
+{# Press items from content/press.yml. Each entry:
+     date:     "June 2024"        (displayed verbatim)
+     title:    headline
+     url:      primary link (optional)
+     outlet:   attribution, e.g. "NASA/STScI/PSU Release" (optional)
+     coverage: [{name, url}, ...] secondary pickups (optional)
+     body:     extra Markdown prose (optional) #}
+{% if section.body %}
+{{ section.body|safe }}
+{% endif %}
+
+<ul class="press">
+{% for item in section.entries %}
+	<li>
+		<b>{{ item.date }}</b>:
+		{% if item.get('url') %}<a href="{{ item.url }}">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %}
+		{% if item.get('outlet') %}, {{ item.outlet }}{% endif %}
+		{% if item.get('coverage') %}
+		(
+		{%- for c in item.coverage -%}
+		<a href="{{ c.url }}">{{ c.name }}</a>{% if not loop.last %}, {% endif %}
+		{%- endfor -%}
+		)
+		{% endif %}
+		{% if item.get('html') %}{{ item.html|safe }}{% endif %}
+	</li>
+{% endfor %}
+</ul>

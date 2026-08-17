@@ -1,0 +1,37 @@
+{# Group members. Current members get a photo grid; alumni get a compact list,
+   because that list only grows and the outcome is the part worth reading.
+   Optional front-matter fields are read with .get() so a missing one is simply
+   omitted -- build.py runs with StrictUndefined to catch genuine typos. #}
+{% set current = section.entries|selectattr("status", "equalto", "current")|list %}
+{% set former = section.entries|selectattr("status", "equalto", "former")|list %}
+
+{% if section.body %}
+{{ section.body|safe }}
+{% endif %}
+
+{% if current %}
+<h3>Current Group Members</h3>
+<div class="people-grid">
+	{% for person in current %}
+	<article class="person">
+		<div class="image-wrap">
+			{% if person.get('link') %}<a href="{{ person.link }}">{% endif %}
+			<img src="{{ person.get('photo', 'images/placeholder-person.svg') }}" alt="Photo of {{ person.name }}">
+			{% if person.get('link') %}</a>{% endif %}
+		</div>
+		<h4><b>{{ person.name }}{% if person.get('role') %}, {{ person.role }},{% endif %}</b> {{ person.inline|safe }}</h4>
+	</article>
+	{% endfor %}
+</div>
+{% endif %}
+
+{% if former %}
+<h3 class="alumni-heading">Former Group Members</h3>
+<ul class="alumni">
+	{% for person in former %}
+	<li>
+		<b>{% if person.get('link') %}<a href="{{ person.link }}">{{ person.name }}</a>{% else %}{{ person.name }}{% endif %}</b>{% if person.get('role') %} &mdash; {{ person.role }}{% endif %}{% if person.get('years') %}, {{ person.years }}{% endif %}{% if person.inline %} &mdash; {{ person.inline|safe }}{% endif %}{% if person.get('outcome') %} &rarr; {{ person.outcome }}{% endif %}
+	</li>
+	{% endfor %}
+</ul>
+{% endif %}

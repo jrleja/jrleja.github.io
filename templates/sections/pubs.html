@@ -1,0 +1,17 @@
+{# Selected publications from content/pubs.yml. Entries:
+     title:   paper title
+     authors: author string, may contain Markdown for bolding
+     ref:     journal reference, e.g. "2022, ApJ, 936, 165"
+     url:     ADS or arXiv link #}
+{% if section.body %}
+{{ section.body|safe }}
+{% endif %}
+
+<ol class="pubs">
+{% for paper in section.entries %}
+	<li>
+		<i>{% if paper.get('url') %}<a href="{{ paper.url }}">{{ paper.title }}</a>{% else %}{{ paper.title }}{% endif %}</i><br />
+		{{ paper.get('authors', '') }}{% if paper.get('ref') %}, {{ paper.ref }}{% endif %}
+	</li>
+{% endfor %}
+</ol>

@@ -1,0 +1,26 @@
+{# One research direction per content/research/*.md. An optional `figure:` with a
+   `paper:` link renders the captioned image block. #}
+{% if section.body %}
+{{ section.body|safe }}
+{% endif %}
+
+{% for topic in section.entries %}
+	{% if topic.get('title') %}
+<h3>{{ topic.title }}</h3>
+	{% endif %}
+{{ topic.html|safe }}
+	{% if topic.get('figure') %}
+<article>
+	{% if topic.get('paper') %}
+	<a href="{{ topic.paper }}" class="image"><img src="{{ topic.figure }}" alt="{{ topic.get('caption', '') }}" class="center" style="width:100%" /></a>
+	{% else %}
+	<span class="image"><img src="{{ topic.figure }}" alt="{{ topic.get('caption', '') }}" class="center" style="width:100%" /></span>
+	{% endif %}
+	{% if topic.get('caption') %}
+	<div class="inner">
+		<h4>{{ topic.caption }}</h4>
+	</div>
+	{% endif %}
+</article>
+	{% endif %}
+{% endfor %}
