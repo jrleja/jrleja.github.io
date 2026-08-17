@@ -12,7 +12,7 @@
 <ul class="press">
 {% for item in section.entries %}
 	<li>
-		<b>{{ item.date }}</b>:
+		<b>{{ item.date }}</b>
 		{% if item.get('url') %}<a href="{{ item.url }}">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %}
 		{% if item.get('outlet') %}, {{ item.outlet }}{% endif %}
 		{% if item.get('coverage') %}

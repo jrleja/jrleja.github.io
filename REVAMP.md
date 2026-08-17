@@ -9,9 +9,45 @@ every session.
 
 ## Status
 
-- **Next session:** 4 — new stylesheet
+- **Next session:** 5 — images
 - **Live site content:** Sept 2025, plus the Session 1 fixes
 - **Last updated:** 2026-08-17
+
+**Session 4 — done.** `assets/css/site.css` replaces the 2018 template. The layout
+that defines the site is preserved (fixed teal sidebar on the right, content left), but
+everything under it is new: CSS-grid, custom-property tokens, dark mode, and a system
+font stack.
+
+| | before | after |
+|---|---|---|
+| CSS | 53.5 KB + 30.3 KB Font Awesome | 11.5 KB |
+| Webfonts | 1060 KB of icon fonts | 0 — two inline SVGs |
+| JS | 107.7 KB (jQuery + 5 plugins) | 1.9 KB vanilla |
+| External requests | Google Fonts (render-blocking) | none |
+| **Total** | **1251.7 KB** | **13.3 KB** |
+
+Smooth scrolling is now `scroll-behavior`, the mobile nav is CSS (the sidebar just
+stacks), and the only thing that still needs JS is highlighting the nav link for the
+section in view — an IntersectionObserver in `assets/js/site.js`.
+
+**A real accessibility bug is fixed.** The old teal `#4acaa8` gave white text just
+**2.04:1** contrast, well under the WCAG AA floor of 4.5:1 — that failure is on the
+live site today. The sidebar is now `#1d7a63` (5.23:1) and link text `#1a7a62`
+(5.24:1). Same hue, and both are single tokens at the top of `site.css`.
+
+Verified with headless Chrome: no horizontal overflow at 360/414/768/1024/1440 px, the
+people grid goes 2→3 columns, and the page validates as well-formed HTML. Caution when
+screenshotting — **headless Chrome clamps its viewport to a 500 px minimum**, so a
+narrower `--window-size` silently clips rather than reflows. Measure `scrollWidth`
+instead of trusting the picture.
+
+Two bugs found by actually looking at the render: the research figure-caption style was
+leaking into the Outreach headings (both used `article > .inner > h4`; research figures
+now carry a `.figure` class), and the press date's trailing colon detached from its
+fixed-width label column.
+
+The old `main.css`, Font Awesome, webfonts and jQuery **stay in the repo for now** —
+the live `index.html` still loads them. They get deleted at the Session 7 swap.
 
 **Session 3 — done.** All content is now data. Six sections build from `content/`:
 Intro, Leja Group, Research, Press, Outreach, Contact. `preview.html` validates as

@@ -6,4 +6,4 @@ photo: images/allyson_garcia.png
 order: 90
 ---
 
-TODO: one line on what Allyson works on.
+measuring observed spectral properties of galaxies and connecting them to models to constrain the burstiness of star formation.

@@ -6,4 +6,4 @@ photo: images/connor_luettgenau.jpeg
 order: 80
 ---
 
-TODO: one line on what Connor works on.
+the local gas properties of early-universe galaxies, aided by strong gravitational lensing.

@@ -24,8 +24,10 @@ description: >-
 
 avatar: images/avatar.jpg
 banner: images/banner.jpg
-stylesheet: assets/css/main.css
+stylesheet: assets/css/site.css
 
+# `icon:` names a macro case in templates/icons.html; without one the label
+# renders as text, which is what ADS and CV want.
 links:
   - label: ADS
     url: https://ui.adsabs.harvard.edu/public-libraries/G3CNFVQISayWjz8Fz-9n5g
@@ -33,19 +35,13 @@ links:
     url: files/CV.pdf
   - label: Github
     url: https://github.com/jrleja/
-    icon: fa-github
+    icon: github
   - label: Email
     url: mailto:joel.leja@psu.edu
-    icon: fa-envelope
+    icon: envelope
 
 scripts:
-  - assets/js/jquery.min.js
-  - assets/js/jquery.scrollex.min.js
-  - assets/js/jquery.scrolly.min.js
-  - assets/js/browser.min.js
-  - assets/js/breakpoints.min.js
-  - assets/js/util.js
-  - assets/js/main.js
+  - assets/js/site.js
 
 sections:
   - id: intro

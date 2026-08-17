@@ -1,0 +1,698 @@
+/* ==========================================================================
+   jrleja.github.io
+   Hand-written replacement for the 2018 HTML5 UP "Read Only" stylesheet.
+
+   Preserves the layout that defines the site -- a fixed teal sidebar on the
+   right, content column on the left -- while dropping jQuery, Font Awesome,
+   and the render-blocking Google Fonts import.
+
+   Everything is driven by the custom properties in :root. To retheme the
+   site, change those and nothing else.
+   ========================================================================== */
+
+/* --- Tokens --------------------------------------------------------------- */
+
+:root {
+	/* Brand. Deepened from the old theme's #4acaa8, which gave white text only
+	   2.04:1 contrast -- well under the WCAG AA floor of 4.5:1. These clear it:
+	   the sidebar is 5.23:1 and link text on white is 5.24:1. Same hue, and
+	   still the only place to change it. */
+	--accent: #1a7a62;
+	--accent-strong: #11543f;
+	--sidebar-bg: #1d7a63;
+	--sidebar-fg: #ffffff;
+	--sidebar-fg-dim: rgba(255, 255, 255, 0.86);
+	--sidebar-rule: rgba(255, 255, 255, 0.24);
+
+	/* Surfaces and text. */
+	--bg: #ffffff;
+	--bg-sunken: #f7f8f8;
+	--fg: #454b4d;
+	--fg-strong: #21262a;
+	--fg-dim: #6d757a;
+	--rule: #e3e7e8;
+
+	/* Type. A system stack: no network request, no layout shift. */
+	--font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		"Helvetica Neue", Arial, sans-serif;
+	--font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+
+	/* Rhythm. */
+	--sidebar-w: 23em;
+	--container-w: 45em;
+	--gap: 1.5rem;
+	--radius: 8px;
+
+	color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--accent: #5fd3b4;
+		--accent-strong: #85e0c6;
+		--sidebar-bg: #1c5f50;
+		--sidebar-fg: #f2fbf8;
+		--sidebar-fg-dim: rgba(242, 251, 248, 0.7);
+		--sidebar-rule: rgba(242, 251, 248, 0.22);
+
+		--bg: #14181a;
+		--bg-sunken: #1b2023;
+		--fg: #c3cacd;
+		--fg-strong: #eef2f3;
+		--fg-dim: #8c969b;
+		--rule: #2b3336;
+	}
+}
+
+/* --- Base ----------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+	*,
+	*::before,
+	*::after {
+		transition-duration: 0.01ms !important;
+		animation-duration: 0.01ms !important;
+	}
+}
+
+body {
+	margin: 0;
+	background: var(--bg);
+	color: var(--fg);
+	font: 400 16px/1.65 var(--font-sans);
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+code,
+pre {
+	font-family: var(--font-mono);
+	font-size: 0.9em;
+}
+
+a {
+	color: var(--accent);
+	text-decoration-thickness: 1px;
+	text-underline-offset: 2px;
+}
+
+a:hover {
+	color: var(--accent-strong);
+}
+
+:where(a, button, [tabindex]):focus-visible {
+	outline: 2px solid var(--accent);
+	outline-offset: 2px;
+	border-radius: 2px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	color: var(--fg-strong);
+	line-height: 1.25;
+	margin: 0 0 0.6em;
+	font-weight: 600;
+}
+
+h2 {
+	font-size: 1.05rem;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: var(--fg-dim);
+	font-weight: 700;
+}
+
+h3 {
+	font-size: 1.3rem;
+	margin-top: 2.2rem;
+}
+
+h4 {
+	font-size: 1rem;
+}
+
+p {
+	margin: 0 0 1.1em;
+}
+
+ul,
+ol {
+	margin: 0 0 1.2em;
+	padding-left: 1.3em;
+}
+
+li {
+	margin-bottom: 0.45em;
+}
+
+hr {
+	border: 0;
+	border-top: 1px solid var(--rule);
+	margin: 2.5rem 0;
+}
+
+/* --- Sidebar -------------------------------------------------------------- */
+
+#header {
+	background: var(--sidebar-bg);
+	color: var(--sidebar-fg);
+	display: flex;
+	flex-direction: column;
+	gap: var(--gap);
+	padding: 2.5rem 2rem;
+	text-align: center;
+}
+
+/* Keep the sidebar links at the bottom without stretching everything else. */
+#header > footer {
+	margin-top: auto;
+	padding-top: 2rem;
+}
+
+#header a {
+	color: inherit;
+}
+
+#header > header p {
+	color: var(--sidebar-fg-dim);
+	font-size: 0.92rem;
+	margin: 0;
+}
+
+.image.avatar {
+	display: block;
+	width: 8.5em;
+	margin: 0 auto 1.25rem;
+	border-radius: 50%;
+	overflow: hidden;
+	aspect-ratio: 1;
+	box-shadow: 0 2px 14px rgba(0, 0, 0, 0.18);
+}
+
+.image.avatar img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+#logo {
+	font-size: 1.7rem;
+	font-weight: 700;
+	letter-spacing: -0.01em;
+	color: var(--sidebar-fg);
+	margin: 0 0 0.35rem;
+}
+
+#logo a {
+	text-decoration: none;
+}
+
+/* Nav */
+
+#nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#nav li {
+	margin: 0;
+	border-top: 1px solid var(--sidebar-rule);
+}
+
+#nav li:last-child {
+	border-bottom: 1px solid var(--sidebar-rule);
+}
+
+#nav a {
+	display: block;
+	padding: 0.75em 0.5em;
+	font-size: 0.82rem;
+	font-weight: 600;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: var(--sidebar-fg-dim);
+	transition: color 0.15s, background-color 0.15s;
+}
+
+#nav a:hover {
+	color: var(--sidebar-fg);
+	background: rgba(255, 255, 255, 0.08);
+}
+
+#nav a.active {
+	color: var(--sidebar-fg);
+	background: rgba(255, 255, 255, 0.14);
+}
+
+/* Sidebar footer links */
+
+.icons {
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: 0.4rem 1rem;
+	margin: 0;
+	padding: 0;
+}
+
+.icons li {
+	margin: 0;
+}
+
+.icons a {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4em;
+	font-size: 0.85rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: var(--sidebar-fg-dim);
+	transition: color 0.15s;
+}
+
+.icons a:hover {
+	color: var(--sidebar-fg);
+}
+
+.icons svg {
+	width: 1.15em;
+	height: 1.15em;
+}
+
+/* In the old icon-font design this text was hidden; here it labels the icon. */
+.icons .label {
+	font-size: inherit;
+}
+
+/* --- Layout --------------------------------------------------------------- */
+
+#wrapper {
+	min-height: 100vh;
+}
+
+.container {
+	max-width: var(--container-w);
+	margin: 0 auto;
+	padding: 0 2rem;
+}
+
+#main > section {
+	padding: 3.5rem 0;
+	border-bottom: 1px solid var(--rule);
+	scroll-margin-top: 1rem;
+}
+
+#main > section:first-child {
+	padding-top: 0;
+}
+
+#main > section:last-child {
+	border-bottom: 0;
+}
+
+/* Banner */
+
+.image.main {
+	margin: 0 0 2rem;
+}
+
+.image.main img {
+	width: 100%;
+	max-height: 22rem;
+	object-fit: contain;
+	background: #ffffff;
+	border-radius: var(--radius);
+	padding: 0.75rem;
+}
+
+header.major {
+	margin-bottom: 1.75rem;
+	padding-bottom: 0.6rem;
+	border-bottom: 1px solid var(--rule);
+}
+
+header.major h2 {
+	margin: 0;
+}
+
+/* --- People grid ---------------------------------------------------------- */
+
+.people-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(10.5rem, 1fr));
+	gap: 2rem 1.75rem;
+	align-items: start;
+	margin-bottom: 1rem;
+}
+
+.person {
+	display: flex;
+	flex-direction: column;
+	gap: 0.7rem;
+}
+
+.person .image-wrap {
+	overflow: hidden;
+	border-radius: var(--radius);
+	background: var(--bg-sunken);
+	aspect-ratio: 1;
+}
+
+.person .image-wrap img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.25s ease;
+}
+
+.person a:hover img {
+	transform: scale(1.03);
+}
+
+.person h4 {
+	margin: 0;
+	font-size: 0.9rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: var(--fg);
+}
+
+.person h4 b {
+	display: block;
+	color: var(--fg-strong);
+	font-weight: 600;
+	margin-bottom: 0.15em;
+}
+
+/* --- Alumni list ---------------------------------------------------------- */
+
+.alumni-heading {
+	margin-top: 2.75rem;
+}
+
+ul.alumni {
+	list-style: none;
+	padding: 0;
+	margin: 0 0 1.75rem;
+	font-size: 0.94rem;
+}
+
+ul.alumni li {
+	padding: 0.5em 0;
+	border-bottom: 1px solid var(--rule);
+	margin: 0;
+	color: var(--fg-dim);
+}
+
+ul.alumni li:last-child {
+	border-bottom: 0;
+}
+
+ul.alumni b {
+	color: var(--fg-strong);
+	font-weight: 600;
+}
+
+/* --- Press ---------------------------------------------------------------- */
+
+ul.press {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+ul.press > li {
+	padding: 0.9em 0;
+	border-bottom: 1px solid var(--rule);
+	margin: 0;
+}
+
+ul.press > li:last-child {
+	border-bottom: 0;
+}
+
+ul.press b {
+	display: inline-block;
+	min-width: 6.5em;
+	color: var(--fg-dim);
+	font-size: 0.82rem;
+	font-weight: 700;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+}
+
+/* --- Talks ---------------------------------------------------------------- */
+
+ul.talks {
+	list-style: none;
+	padding: 0;
+	margin: 0 0 1.5rem;
+	font-size: 0.94rem;
+}
+
+ul.talks li {
+	display: flex;
+	justify-content: space-between;
+	gap: 1rem;
+	padding: 0.45em 0;
+	border-bottom: 1px solid var(--rule);
+	margin: 0;
+}
+
+ul.talks .date {
+	flex: none;
+	color: var(--fg-dim);
+	font-variant-numeric: tabular-nums;
+	font-size: 0.88rem;
+}
+
+/* --- Publications --------------------------------------------------------- */
+
+ol.pubs {
+	padding-left: 1.4em;
+	font-size: 0.94rem;
+}
+
+ol.pubs li {
+	margin-bottom: 0.9em;
+}
+
+/* --- Figures (Research) --------------------------------------------------- */
+
+#main .figure {
+	margin: 2rem 0 2.5rem;
+}
+
+#main .figure .image img {
+	width: 100%;
+	border-radius: var(--radius);
+	background: var(--bg-sunken);
+}
+
+#main .figure .inner {
+	margin-top: 0.7rem;
+}
+
+#main .figure .inner h4 {
+	margin: 0;
+	font-size: 0.88rem;
+	font-weight: 400;
+	font-style: italic;
+	color: var(--fg-dim);
+	line-height: 1.5;
+}
+
+/* --- Features (Outreach) -------------------------------------------------- */
+
+.features {
+	display: grid;
+	gap: 2.5rem;
+}
+
+.features article {
+	display: grid;
+	grid-template-columns: minmax(0, 14rem) minmax(0, 1fr);
+	gap: 1.5rem;
+	align-items: start;
+	margin: 0;
+}
+
+.features .image img {
+	border-radius: var(--radius);
+	aspect-ratio: 4 / 3;
+	object-fit: cover;
+	width: 100%;
+}
+
+.features .inner h4 {
+	margin-top: 0;
+	font-size: 1.05rem;
+}
+
+.features .inner p:last-child {
+	margin-bottom: 0;
+}
+
+/* --- Page footer ---------------------------------------------------------- */
+
+#footer {
+	padding: 2.5rem 0 3rem;
+	background: var(--bg-sunken);
+	border-top: 1px solid var(--rule);
+}
+
+ul.copyright {
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.4rem 1.25rem;
+	margin: 0;
+	padding: 0;
+	font-size: 0.84rem;
+	color: var(--fg-dim);
+}
+
+ul.copyright li {
+	margin: 0;
+}
+
+/* --- Responsive ----------------------------------------------------------- */
+
+/* Desktop: sidebar pinned right, content column to its left. */
+@media screen and (min-width: 1000px) {
+	#header {
+		position: fixed;
+		top: 0;
+		right: 0;
+		width: var(--sidebar-w);
+		height: 100vh;
+		overflow-y: auto;
+		padding: 3rem 2rem;
+	}
+
+	#wrapper {
+		margin-right: var(--sidebar-w);
+	}
+
+	#main > section {
+		scroll-margin-top: 0;
+	}
+}
+
+/* Tablet and below: the sidebar becomes a normal header at the top. No JS
+   panel, no hamburger -- it simply stacks. */
+@media screen and (max-width: 999px) {
+	#header {
+		padding: 2.5rem 1.5rem 1.75rem;
+	}
+
+	#nav ul {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 0 0.25rem;
+	}
+
+	#nav li,
+	#nav li:last-child {
+		border: 0;
+	}
+
+	#nav a {
+		padding: 0.5em 0.75em;
+		border-radius: 999px;
+	}
+
+	.image.main img {
+		max-height: 14rem;
+	}
+}
+
+@media screen and (max-width: 640px) {
+	body {
+		font-size: 15px;
+	}
+
+	.container {
+		padding: 0 1.25rem;
+	}
+
+	#main > section {
+		padding: 2.5rem 0;
+	}
+
+	.people-grid {
+		grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
+		gap: 1.5rem 1.25rem;
+	}
+
+	/* Stack the outreach blocks rather than squeezing a 2-column grid. */
+	.features article {
+		grid-template-columns: 1fr;
+		gap: 1rem;
+	}
+
+	.features .image img {
+		aspect-ratio: 16 / 9;
+	}
+
+	ul.press b {
+		display: block;
+		min-width: 0;
+		margin-bottom: 0.2em;
+	}
+
+	ul.talks li {
+		flex-direction: column;
+		gap: 0.15rem;
+	}
+}
+
+/* --- Print ---------------------------------------------------------------- */
+
+@media print {
+	#header,
+	#footer {
+		display: none;
+	}
+
+	#wrapper {
+		margin: 0;
+	}
+
+	body {
+		color: #000;
+		background: #fff;
+	}
+
+	a {
+		color: #000;
+	}
+}

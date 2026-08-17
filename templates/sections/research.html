@@ -10,12 +10,12 @@
 	{% endif %}
 {{ topic.html|safe }}
 	{% if topic.get('figure') %}
-<article>
+<article class="figure">
 	{% set alt = topic.get('alt', topic.get('title', 'Figure')) %}
 	{% if topic.get('paper') %}
-	<a href="{{ topic.paper }}" class="image"><img src="{{ topic.figure }}" alt="{{ alt }}" class="center" style="width:100%" /></a>
+	<a href="{{ topic.paper }}" class="image"><img src="{{ topic.figure }}" alt="{{ alt }}" /></a>
 	{% else %}
-	<span class="image"><img src="{{ topic.figure }}" alt="{{ alt }}" class="center" style="width:100%" /></span>
+	<span class="image"><img src="{{ topic.figure }}" alt="{{ alt }}" /></span>
 	{% endif %}
 	{% if topic.get('caption') %}
 	<div class="inner">

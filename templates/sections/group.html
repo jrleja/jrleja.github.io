@@ -22,7 +22,7 @@
 			<img src="{{ person.get('photo', 'images/placeholder-person.svg') }}" alt="Photo of {{ person.name }}">
 			{% if person.get('link') %}</a>{% endif %}
 		</div>
-		<h4><b>{{ person.name }}{% if person.get('role') %}, {{ person.role }},{% endif %}</b> {{ person.inline|safe }}</h4>
+		<h4><b>{{ person.name }}{% if person.get("role") %}, {{ person.role }}{% endif %}</b> {{ person.inline|safe }}</h4>
 	</article>
 	{% endfor %}
 </div>

@@ -6,4 +6,4 @@ photo: images/lishan_shi.png
 order: 70
 ---
 
-TODO: one line on what Lishan works on.
+using ultra-fast neural posterior estimators to rapidly analyze deep and wide surveys of the universe.
