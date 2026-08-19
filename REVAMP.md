@@ -9,9 +9,48 @@ every session.
 
 ## Status
 
-- **Next session:** 5 — images
+- **Next session:** 6 — metadata + accessibility (or 7, the live swap)
 - **Live site content:** Sept 2025, plus the Session 1 fixes
 - **Last updated:** 2026-08-17
+
+**Session 5 — done.** Page weight **4.36 MB → 1.11 MB (74% smaller)**.
+
+| file | before | after |
+|---|---|---|
+| `avatar.jpg` | 8317 KB (3459×5188!) | 61 KB (400×600) |
+| `ashtekar.png` → `.jpg` | 1803 KB | 61 KB |
+| `animation.gif` | 964 KB | 311 KB (760 px, 256 colours, 8 frames kept) |
+| `allyson_garcia.png` → `.jpg` | 763 KB | 37 KB |
+| `nikko_cleri.png` → `.jpg` | 566 KB | 29 KB |
+| `6points.jpg` | 410 KB | 67 KB |
+| `marta_laska.jpeg` | 378 KB | 38 KB |
+| `fsf.jpg` | 291 KB | 79 KB |
+| `banner.jpg` | 80 KB | 27 KB |
+
+Deleted outright: `old_avatar.jpg`, `read-only.zip` (1007 KB of template cruft),
+`kanishk_pandey.jpeg`, `nathan_cristello.jpeg` (unreferenced since alumni became a text
+list). `placeholder-person.svg` stays — it is the template's fallback for anyone with
+no `photo:`.
+
+Two things worth knowing. Re-encoding is **only kept when it actually shrinks the
+file** — `emilie_burnham_faith.jpeg` grew from 20 KB to 44 KB on the first pass because
+it was already well compressed, and had to be restored. And `animation.gif` could drop
+a further 175 KB as an mp4 (134 KB), but that needs a `<video>` tag and raises
+autoplay/reduced-motion questions; not worth it for a figure Sessions 9–10 may replace.
+
+Originals are backed up in the session scratchpad, and git history has them regardless.
+
+### Still to delete at the Session 7 swap
+
+Only the live `index.html` still references these:
+
+- `images/ashtekar.png` (1803 KB), `images/nikko_cleri.png` (566 KB)
+- `images/william_bowman.jpeg` (951 KB), `bingjie_wang.jpeg`, `yijia_li.jpeg`,
+  `Junyu Zhang.jpeg` — alumni photos
+- `assets/css/main.css`, `assets/css/font-awesome.min.css`, `assets/fonts/`,
+  `assets/js/jquery*` and the other old scripts (~1250 KB)
+
+Reclaimable: **~3.3 MB of images + ~1.25 MB of old assets.**
 
 **Session 4 — done.** `assets/css/site.css` replaces the 2018 template. The layout
 that defines the site is preserved (fixed teal sidebar on the right, content left), but

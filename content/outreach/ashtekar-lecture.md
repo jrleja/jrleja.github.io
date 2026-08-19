@@ -1,6 +1,6 @@
 ---
 title: Ashtekar Frontiers of Science Lecture
-image: images/ashtekar.png
+image: images/ashtekar.jpg
 alt: Joel Leja delivering the 2024 Ashtekar Frontiers of Science lecture
 order: 20
 ---

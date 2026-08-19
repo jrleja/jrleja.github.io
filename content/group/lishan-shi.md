@@ -2,7 +2,7 @@
 name: Lishan Shi
 role: Statistics graduate student
 years: 2025–
-photo: images/lishan_shi.png
+photo: images/lishan_shi.jpg
 order: 70
 ---
 

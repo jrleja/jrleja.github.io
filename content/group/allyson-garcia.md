@@ -2,7 +2,7 @@
 name: Allyson Garcia
 role: undergraduate researcher
 years: 2026–
-photo: images/allyson_garcia.png
+photo: images/allyson_garcia.jpg
 order: 90
 ---
 

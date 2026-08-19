@@ -2,7 +2,7 @@
 name: Nikko Cleri
 role: Eberly Postdoctoral Fellow
 years: 2024–
-photo: images/nikko_cleri.png
+photo: images/nikko_cleri.jpg
 link: https://njcleri.github.io/
 order: 10
 ---
