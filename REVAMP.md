@@ -9,7 +9,9 @@ every session.
 
 ## Status
 
-- **Next session:** 9–10 — rewrite Research (the biggest remaining lift)
+- **Next session:** 9–10 — rewrite Research. **Read `RESEARCH-BRIEF.md` first**: it
+  holds the theme breakdown from CV.tex, three candidate framings with a
+  recommendation, and the five questions only Joel can answer.
 - **Live site:** **the new generated site is LIVE** as of 2026-08-17
 - **Last updated:** 2026-08-17
 
