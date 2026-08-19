@@ -41,7 +41,7 @@ MD = markdown.Markdown(extensions=["smarty", "tables", "attr_list"])
 
 # Front-matter / YAML fields that are prose and so get rendered as inline Markdown,
 # letting a caption carry emphasis or a link. Templates must print these with |safe.
-MARKDOWN_FIELDS = ("caption",)
+MARKDOWN_FIELDS = ("caption", "authors")
 
 
 def render_markdown(text):

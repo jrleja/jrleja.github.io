@@ -93,6 +93,14 @@ sections:
     template: research
     source: research
 
+  - id: publications
+    label: Publications
+    title: Selected Publications
+    template: pubs
+    sources:
+      body: pubs.md
+      entries: pubs.yml
+
   - id: contact
     label: Contact
     title: Contact

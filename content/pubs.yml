@@ -1,0 +1,87 @@
+# Selected publications, newest first. Rendered by templates/sections/pubs.html.
+#
+#   title    paper title
+#   authors  Markdown; Joel's name in bold
+#   ref      journal reference as it should read
+#   url      link target
+#
+# Every DOI below was resolved against the Crossref API by matching title, volume AND
+# page, and the two arXiv IDs were confirmed against the arXiv API by title and author
+# list. Do not hand-edit a link without re-checking it -- constructing ADS bibcodes by
+# hand looked fine and could not be validated (the ADS link gateway redirects any
+# string, including nonsense, so it cannot confirm a bibcode exists).
+
+- title: Water absorption confirms cool atmospheres in two little red dots
+  authors: "Wang, Bingjie; **Leja, Joel**; et al."
+  ref: 2026, submitted to Nature
+  url: https://arxiv.org/abs/2602.06024
+
+- title: "It's More Complicated Than You Think: A Forward Model to Infer the Recent Star Formation History, Bursty or Not, of Galaxy Populations"
+  authors: "Burnham, Emilie; Wang, Bingjie; **Leja, Joel**; et al."
+  ref: 2026, ApJ, 1001, 205
+  url: https://doi.org/10.3847/1538-4357/ae562d
+
+- title: "The Missing Hard Photons of Little Red Dots: Their Incident Ionizing Spectra Resemble Massive Stars"
+  authors: "Wang, Bingjie; **Leja, Joel**; et al."
+  ref: 2025, ApJ, accepted
+  url: https://arxiv.org/abs/2508.18358
+
+- title: "Population Models for Star Formation Timescales in Early Galaxies: The First Step Towards Solving Outshining in Star Formation History Inference"
+  authors: "Wang, Bingjie; **Leja, Joel**; et al."
+  ref: 2025, ApJ, 987, 184
+  url: https://doi.org/10.3847/1538-4357/adddb8
+
+- title: "Cue: A Fast and Flexible Photoionization Emulator for Modeling Nebular Emission Powered by Almost Any Ionizing Source"
+  authors: "Li, Yijia; **Leja, Joel**; et al."
+  ref: 2025, ApJ, 986, 9
+  url: https://doi.org/10.3847/1538-4357/adcab4
+
+- title: "RUBIES: Evolved Stellar Populations with Extended Formation Histories at z ~ 7–8 in Candidate Massive Galaxies Identified with JWST/NIRSpec"
+  authors: "Wang, Bingjie; **Leja, Joel**; et al."
+  ref: 2024, ApJL, 969, L13
+  url: https://doi.org/10.3847/2041-8213/ad55f7
+
+- title: "Quantifying the Effects of Known Unknowns on Inferred High-redshift Galaxy Properties: Burstiness, the IMF, and Nebular Physics"
+  authors: "Wang, Bingjie; **Leja, Joel**; et al."
+  ref: 2024, ApJ, 963, 74
+  url: https://doi.org/10.3847/1538-4357/ad187c
+
+- title: "The UNCOVER Survey: A First-look HST+JWST Catalog of Galaxy Redshifts and Stellar Population Properties Spanning 0.2 ≤ z ≤ 15"
+  authors: "Wang, Bingjie; **Leja, Joel**; et al."
+  ref: 2024, ApJS, 270, 12
+  url: https://doi.org/10.3847/1538-4365/ad0846
+
+- title: "SBI++: Flexible, Ultra-fast Likelihood-free Inference Customized for Astronomical Applications"
+  authors: "Wang, Bingjie; **Leja, Joel**; et al."
+  ref: 2023, ApJL, 952, L10
+  url: https://doi.org/10.3847/2041-8213/ace361
+
+- title: "A New Census of the 0.2 < z < 3.0 Universe, Part II: The Star-Forming Sequence"
+  authors: "**Leja, Joel**; et al."
+  ref: 2022, ApJ, 936, 165
+  url: https://doi.org/10.3847/1538-4357/ac887d
+
+- title: "A New Census of the 0.2 < z < 3.0 Universe, Part I: The Stellar Mass Function"
+  authors: "**Leja, Joel**; et al."
+  ref: 2020, ApJ, 893, 111
+  url: https://doi.org/10.3847/1538-4357/ab7e27
+
+- title: An Older, More Quiescent Universe from Panchromatic SED Fitting of the 3D-HST Survey
+  authors: "**Leja, Joel**; et al."
+  ref: 2019, ApJ, 877, 140
+  url: https://doi.org/10.3847/1538-4357/ab1d5a
+
+- title: "How to Measure Galaxy Star Formation Histories II: Nonparametric Models"
+  authors: "**Leja, Joel**; et al."
+  ref: 2019, ApJ, 876, 3
+  url: https://doi.org/10.3847/1538-4357/ab133c
+
+- title: "Deriving Physical Properties from Broadband Photometry with Prospector: Description of the Model and a Demonstration of its Accuracy"
+  authors: "**Leja, Joel**; et al."
+  ref: 2017, ApJ, 837, 170
+  url: https://doi.org/10.3847/1538-4357/aa5ffe
+
+- title: Tracing Galaxies Through Cosmic Time with Number Density Selection
+  authors: "**Leja, Joel**; et al."
+  ref: 2013, ApJ, 766, 33
+  url: https://doi.org/10.1088/0004-637x/766/1/33
