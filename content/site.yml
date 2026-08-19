@@ -50,6 +50,12 @@ sections:
     template: prose
     source: intro.md
 
+  - id: press
+    label: Press
+    title: Press
+    template: press
+    source: press.yml
+
   - id: group
     label: Leja Group
     title: My Research Group
@@ -58,18 +64,6 @@ sections:
       current: group          # one .md per person, with a photo
       alumni: alumni.yml      # a text list; the outcome is the point
 
-  - id: research
-    label: Research
-    title: Research
-    template: research
-    source: research
-
-  - id: press
-    label: Press
-    title: Press
-    template: press
-    source: press.yml
-
   - id: outreach
     label: Outreach
     title: Outreach
@@ -77,6 +71,12 @@ sections:
     sources:
       body: outreach.md
       entries: outreach
+
+  - id: research
+    label: Research
+    title: Research
+    template: research
+    source: research
 
   - id: contact
     label: Contact
