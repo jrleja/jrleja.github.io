@@ -9,9 +9,39 @@ every session.
 
 ## Status
 
-- **Next session:** 6 — metadata + accessibility (favicon, Open Graph card)
+- **Next session:** 9–10 — rewrite Research (the biggest remaining lift)
 - **Live site:** **the new generated site is LIVE** as of 2026-08-17
 - **Last updated:** 2026-08-17
+
+**Session 6 — done.** Metadata and an accessibility pass.
+
+`tools/make-images.py` generates `favicon.svg`, `favicon-32.png`,
+`apple-touch-icon.png` and `images/og-card.jpg` (1200×630) — rendered through headless
+Chrome so the type matches the site, then downscaled with Pillow, which is sharper than
+asking Chrome to draw 32 px text. **Re-run it after changing the avatar or the
+palette**; it reads the teal straight out of `site.css`.
+
+Added: canonical URL, full Open Graph + `twitter:card` tags, per-theme `theme-color`,
+favicon links. Pasting the URL into Slack or Bluesky now shows a real card.
+
+Accessibility fixes, all found by auditing rather than guessing:
+
+- **Outreach skipped a heading level** (h2 → h4). Feature titles are now `h3`.
+- **Research figure captions were `h4`s**, so the document outline read as a list of
+  figure titles. They are `<figcaption>` inside `<figure>` now.
+- **Landmarks were missing.** `<div id="main">` → `<main>`, the sidebar `<section>` →
+  `<header>`, the page `<section id="footer">` → `<footer>`, plus `aria-label` on the
+  nav and `aria-labelledby` on each section. Added a **skip-to-content link**, which
+  matters here because the sidebar's nav comes first in the DOM.
+- The banner had `alt=""`; it now describes the SED figure.
+- **Three contrast pairs sat just under AA** and were nudged: dimmed text on the sunken
+  footer (4.41 → 4.54), the light sidebar nav (4.31 → 4.69), and the dark sidebar nav
+  (4.41 → 5.22). **Every pair in both themes now clears 4.5:1**, worst case 4.54.
+
+The HTML5 UP footer credit is gone, along with the last reference to the old theme.
+
+Verified: no heading-level skips, every `<img>` has meaningful alt text, all landmarks
+present, no horizontal overflow at 414/768/1440, HTML well-formed.
 
 **Session 7 — done, out of order. The swap is complete.** `index.html` is now built by
 `build.py`, and `build.py` with no arguments writes `index.html` (pass

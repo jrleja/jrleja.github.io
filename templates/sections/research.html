@@ -1,5 +1,7 @@
 {# One research direction per content/research/*.md. An optional `figure:` with a
-   `paper:` link renders the captioned image block. #}
+   `paper:` link renders a captioned figure. The caption is a <figcaption>, not a
+   heading -- it is a caption, and putting it in the heading outline made the page's
+   structure read as a list of figure titles. #}
 {% if section.body %}
 {{ section.body|safe }}
 {% endif %}
@@ -10,7 +12,7 @@
 	{% endif %}
 {{ topic.html|safe }}
 	{% if topic.get('figure') %}
-<article class="figure">
+<figure class="figure">
 	{% set alt = topic.get('alt', topic.get('title', 'Figure')) %}
 	{% if topic.get('paper') %}
 	<a href="{{ topic.paper }}" class="image"><img src="{{ topic.figure }}" alt="{{ alt }}" /></a>
@@ -18,10 +20,8 @@
 	<span class="image"><img src="{{ topic.figure }}" alt="{{ alt }}" /></span>
 	{% endif %}
 	{% if topic.get('caption') %}
-	<div class="inner">
-		<h4>{{ topic.caption|safe }}</h4>
-	</div>
+	<figcaption>{{ topic.caption|safe }}</figcaption>
 	{% endif %}
-</article>
+</figure>
 	{% endif %}
 {% endfor %}

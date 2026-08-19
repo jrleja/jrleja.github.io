@@ -5,13 +5,35 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="description" content="Joel Leja is an associate professor of astronomy and astrophysics at Penn State, studying galaxy formation by combining deep JWST surveys with statistics and machine learning." />
+		<link rel="canonical" href="https://jrleja.github.io/" />
+
+		<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+		<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png" />
+		<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+		<meta name="theme-color" content="#1d7a63" media="(prefers-color-scheme: light)" />
+		<meta name="theme-color" content="#1c5f50" media="(prefers-color-scheme: dark)" />
+
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="Joel Leja" />
+		<meta property="og:title" content="Joel Leja &middot; Associate Professor of Astronomy &amp; Astrophysics" />
+		<meta property="og:description" content="Joel Leja is an associate professor of astronomy and astrophysics at Penn State, studying galaxy formation by combining deep JWST surveys with statistics and machine learning." />
+		<meta property="og:url" content="https://jrleja.github.io/" />
+		<meta property="og:image" content="https://jrleja.github.io/images/og-card.jpg" />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:image:alt" content="Joel Leja, Associate Professor of Astronomy &amp; Astrophysics, The Pennsylvania State University" />
+		<meta name="twitter:card" content="summary_large_image" />
+
 		<link rel="stylesheet" href="assets/css/site.css" />
 	</head>
 	<body>
 
-		<!-- Header -->
-			<section id="header">
-				<header>
+		<a class="skip-link" href="#main">Skip to content</a>
+
+		<!-- Sidebar -->
+			<header id="header">
+				<div class="identity">
 					<span class="image avatar"><img src="images/avatar.jpg" alt="Joel Leja" /></span>
 					<h1 id="logo"><a href="#">Joel Leja</a></h1>
 					<p>
@@ -19,8 +41,8 @@
 						Dr. Keiko Miwa Ross Mid-Career Professor<br />
 					The Pennsylvania State University
 					</p>
-				</header>
-				<nav id="nav">
+				</div>
+				<nav id="nav" aria-label="Sections">
 					<ul>
 						<li><a href="#intro" class="active">Intro</a></li>
 						<li><a href="#press">Press</a></li>
@@ -30,26 +52,26 @@
 						<li><a href="#contact">Contact</a></li>
 					</ul>
 				</nav>
-				<footer>
+				<div class="links">
 					<ul class="icons">
 						<li><a href="https://ui.adsabs.harvard.edu/public-libraries/G3CNFVQISayWjz8Fz-9n5g">ADS</a></li>
 						<li><a href="files/CV.pdf">CV</a></li>
 						<li><a href="https://github.com/jrleja/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg><span class="label">Github</span></a></li>
 						<li><a href="mailto:joel.leja@psu.edu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg><span class="label">Email</span></a></li>
 					</ul>
-				</footer>
-			</section>
+				</div>
+			</header>
 
 		<!-- Wrapper -->
 			<div id="wrapper">
-				<div id="main">
-					<section id="intro">
-						<div class="image main" data-position="center">
-							<img src="images/banner.jpg" alt="" />
+				<main id="main" tabindex="-1">
+					<section id="intro" aria-labelledby="intro-heading">
+						<div class="image main">
+							<img src="images/banner.jpg" alt="A galaxy spectral energy distribution from the ultraviolet to the far infrared, with observed photometry overlaid on a fitted model spectrum." />
 						</div>
 						<div class="container">
 							<header class="major">
-								<h2>Intro</h2>
+								<h2 id="intro-heading">Intro</h2>
 							</header>
 <p>I am an <strong>associate professor of astronomy &amp; astrophysics</strong> at
 <a href="https://science.psu.edu/astro">The Pennsylvania State University</a>. I hold the
@@ -82,10 +104,10 @@ State.</p>
 are my <a href="files/mentoring_leja_group.pdf">mentoring notes</a> for my research group, loosely
 following a similar document from my postdoctoral mentor, Charlie Conroy.</p>						</div>
 					</section>
-					<section id="press">
+					<section id="press" aria-labelledby="press-heading">
 						<div class="container">
 							<header class="major">
-								<h2>Press</h2>
+								<h2 id="press-heading">Press</h2>
 							</header>
 
 <ul class="press">
@@ -125,10 +147,10 @@ following a similar document from my postdoctoral mentor, Charlie Conroy.</p>			
 <a href="https://science.psu.edu/news/Leja9-2021/">Early, massive galaxies running on empty</a>, STScI/ALMA/PSU Release	</li>
 </ul>						</div>
 					</section>
-					<section id="group">
+					<section id="group" aria-labelledby="group-heading">
 						<div class="container">
 							<header class="major">
-								<h2>My Research Group</h2>
+								<h2 id="group-heading">My Research Group</h2>
 							</header>
 
 <h3>Current Group Members</h3>
@@ -215,10 +237,10 @@ following a similar document from my postdoctoral mentor, Charlie Conroy.</p>			
 </ul>
 						</div>
 					</section>
-					<section id="outreach">
+					<section id="outreach" aria-labelledby="outreach-heading">
 						<div class="container">
 							<header class="major">
-								<h2>Outreach</h2>
+								<h2 id="outreach-heading">Outreach</h2>
 							</header>
 <p>In addition to my professional mentoring, I believe that knowing more about science and the
 scientific process improves the lives of everyone (and — talking to folks about it is lots
@@ -228,30 +250,30 @@ of fun!).</p>
 	<article>
 		<span class="image"><img src="images/fsf.jpg" alt="Middle-school students judging researchers at the Flipped Science Fair" /></span>
 		<div class="inner">
-			<h4>Flipped Science Fair</h4>
+			<h3>Flipped Science Fair</h3>
 			<p>I host(ed) an annual reverse science fair, where professional researchers present their research to students from local elementary and middle schools. The students serve as “judges” and announce a winner at the end of the event. This encourages and develops outreach skills among researchers while simultaneously engaging the middle school students in a critical form of active learning.</p>
 		</div>
 	</article>
 	<article>
 		<span class="image"><img src="images/ashtekar.jpg" alt="Joel Leja delivering the 2024 Ashtekar Frontiers of Science lecture" /></span>
 		<div class="inner">
-			<h4>Ashtekar Frontiers of Science Lecture</h4>
+			<h3>Ashtekar Frontiers of Science Lecture</h3>
 			<p>I gave an <a href="https://science.psu.edu/frontiers/joel-leja-michael-eracleous">Ashtekar Frontiers of Science 2024 Lecture</a> at Penn State, entitled “Surprises at the Dawn of Time from James Webb: A First Look at the First Stars, Galaxies, and Black Holes”, with an intro from Prof. Michael Eracleous. This was an exciting opportunity to share cutting-edge research from the James Webb Space Telescope to the Penn State community, with over 200 attendees!</p>
 		</div>
 	</article>
 	<article>
 		<span class="image"><img src="images/6points.jpg" alt="Talking with middle schoolers at the URJ 6 Points Sci-Tech Academy" /></span>
 		<div class="inner">
-			<h4>Visiting URJ 6 Points Sci-Tech Academy</h4>
+			<h3>Visiting URJ 6 Points Sci-Tech Academy</h3>
 			<p>Giving talks to middle schoolers at science summer camp about my thesis research, and talking to them in their classrooms!</p>
 		</div>
 	</article>
 </div>						</div>
 					</section>
-					<section id="research">
+					<section id="research" aria-labelledby="research-heading">
 						<div class="container">
 							<header class="major">
-								<h2>Research</h2>
+								<h2 id="research-heading">Research</h2>
 							</header>
 
 <h3>Simple Models of Galaxy Assembly</h3>
@@ -265,12 +287,10 @@ a result, astronomers had now surveyed the vast majority of the galaxy populatio
 the majority of cosmic time for the very first time. My advisor and I thought that it was
 now the ideal time to &ldquo;put it all together&rdquo; and write down how galaxies grew up in a
 simple analytical model. This was the beginning of my thesis.</p>
-<article class="figure">
+<figure class="figure">
 	<a href="https://ui.adsabs.harvard.edu/abs/2013ApJ...766...33L/abstract" class="image"><img src="images/galaxy_trajectories.jpg" alt="Model trajectories of galaxy growth at constant number density" /></a>
-	<div class="inner">
-		<h4>2013: Processes affecting galaxy evolution at a constant number density</h4>
-	</div>
-</article>
+	<figcaption>2013: Processes affecting galaxy evolution at a constant number density</figcaption>
+</figure>
 <p>However, after constructing and testing our analytical framework, we found a serious
 problem with this plan. Applying our model to two independent measurements of galaxy mass
 growth (the current rate of star formation and the current mass locked up in stars)
@@ -278,12 +298,10 @@ resulted in galaxy growth rates which were <strong>systematically offset by a fa
 This was a big problem. To put it in perspective, our model suggested that a typical
 ancestor of the Milky Way would grow by a factor of 4–16 from z~2, a confidence interval
 so large as to be almost useless!</p>
-<article class="figure">
+<figure class="figure">
 	<a href="https://ui.adsabs.harvard.edu/abs/2015ApJ...798..115L/abstract" class="image"><img src="images/sfrd.png" alt="Observed masses and star formation rates disagreeing by a factor of two" /></a>
-	<div class="inner">
-		<h4>2015: Even after changing the SFR(M), observed masses and SFRs disagreed</h4>
-	</div>
-</article>
+	<figcaption>2015: Even after changing the SFR(M), observed masses and SFRs disagreed</figcaption>
+</figure>
 <h3>A New Method to Measure Galaxy Properties</h3>
 <p>The problem lay in the models we used to convert galaxy observations into galaxy
 properties. While these models had had many successes over many years, they were not
@@ -301,47 +319,39 @@ stellar populations experts Professor Charlie Conroy and Dr. Ben Johnson at the 
 for Astrophysics | Harvard &amp; Smithsonian to develop a new model addressing these
 problems: <a href="https://github.com/jrleja/prospector_alpha"><em>Prospector-α</em></a>, built within the
 <a href="https://github.com/bd-j/prospector">Prospector Bayesian inference framework</a>.</p>
-<article class="figure">
+<figure class="figure">
 	<a href="https://ui.adsabs.harvard.edu/abs/2017ApJ...837..170L/abstract" class="image"><img src="images/animation.gif" alt="Prospector-alpha fitting a galaxy spectral energy distribution to photometry" /></a>
-	<div class="inner">
-		<h4>2017: Here Prospector fits our new galaxy SED model <em>Prospector-α</em> to photometry</h4>
-	</div>
-</article>
+	<figcaption>2017: Here Prospector fits our new galaxy SED model <em>Prospector-α</em> to photometry</figcaption>
+</figure>
 <h3>A New Cosmic Consensus</h3>
 <p>We applied this new <em>Prospector-α</em> model to a mass-complete sample of 58,461 galaxies
 across 0.5 &lt; z &lt; 2.5 from the 3D-HST survey. These new inferences lowered the observed
 cosmic star formation rate density by ∼0.2 dex and increased the observed stellar mass
 growth by ∼0.1 dex, finally bringing these two measurements into agreement and implying
 an older, more quiescent Universe than found in previous work.</p>
-<article class="figure">
+<figure class="figure">
 	<a href="https://ui.adsabs.harvard.edu/abs/2019ApJ...877..140L/abstract" class="image"><img src="images/delta_sfrd.png" alt="A revised cosmic star formation rate density implying an older, more quiescent Universe" /></a>
-	<div class="inner">
-		<h4>2019: A new consensus in the older, more quiescent Universe inferred by <em>Prospector-α</em></h4>
-	</div>
-</article>
+	<figcaption>2019: A new consensus in the older, more quiescent Universe inferred by <em>Prospector-α</em></figcaption>
+</figure>
 						</div>
 					</section>
-					<section id="contact">
+					<section id="contact" aria-labelledby="contact-heading">
 						<div class="container">
 							<header class="major">
-								<h2>Contact</h2>
+								<h2 id="contact-heading">Contact</h2>
 							</header>
 <p>My office is Davey Laboratory 515. You can reach me electronically at
 <a href="mailto:joel.leja@psu.edu">joel.leja@psu.edu</a>.</p>						</div>
 					</section>
-				</div>
+				</main>
 
-				<!-- Footer -->
-					<section id="footer">
-						<div class="container">
-							<ul class="copyright">
-								<li>&copy; Joel Leja. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
-					</section>
+				<footer id="footer">
+					<div class="container">
+						<p class="copyright">&copy; Joel Leja. Built with <a href="https://github.com/jrleja/jrleja.github.io">a small Python generator</a>.</p>
+					</div>
+				</footer>
 			</div>
 
-		<!-- Scripts -->
 			<script src="assets/js/site.js"></script>
 
 	</body>

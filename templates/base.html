@@ -7,13 +7,38 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="description" content="{{ site.description }}" />
+		<link rel="canonical" href="{{ site.url }}" />
+
+		{# Favicons: SVG for modern browsers, PNG fallback, and the iOS home-screen icon. #}
+		<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+		<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png" />
+		<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+		{# Address-bar colour, per theme. #}
+		<meta name="theme-color" content="{{ site.theme_color }}" media="(prefers-color-scheme: light)" />
+		<meta name="theme-color" content="{{ site.theme_color_dark }}" media="(prefers-color-scheme: dark)" />
+
+		{# Link previews in Slack, Bluesky, Mastodon, iMessage, etc. #}
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="{{ site.name }}" />
+		<meta property="og:title" content="{{ site.name }} &middot; {{ site.titles[0] }}" />
+		<meta property="og:description" content="{{ site.description }}" />
+		<meta property="og:url" content="{{ site.url }}" />
+		<meta property="og:image" content="{{ site.url }}{{ site.og_image }}" />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:image:alt" content="{{ site.name }}, {{ site.titles[0] }}, {{ site.affiliation }}" />
+		<meta name="twitter:card" content="summary_large_image" />
+
 		<link rel="stylesheet" href="{{ site.stylesheet }}" />
 	</head>
 	<body>
 
-		<!-- Header -->
-			<section id="header">
-				<header>
+		<a class="skip-link" href="#main">Skip to content</a>
+
+		<!-- Sidebar -->
+			<header id="header">
+				<div class="identity">
 					<span class="image avatar"><img src="{{ site.avatar }}" alt="{{ site.name }}" /></span>
 					<h1 id="logo"><a href="#">{{ site.name }}</a></h1>
 					<p>
@@ -22,15 +47,15 @@
 					{% endfor %}
 					{{ site.affiliation }}
 					</p>
-				</header>
-				<nav id="nav">
+				</div>
+				<nav id="nav" aria-label="Sections">
 					<ul>
 					{% for section in sections %}
 						<li><a href="#{{ section.id }}"{% if loop.first %} class="active"{% endif %}>{{ section.label }}</a></li>
 					{% endfor %}
 					</ul>
 				</nav>
-				<footer>
+				<div class="links">
 					<ul class="icons">
 					{% for link in site.links %}
 						{% if link.get('icon') %}
@@ -40,40 +65,36 @@
 						{% endif %}
 					{% endfor %}
 					</ul>
-				</footer>
-			</section>
+				</div>
+			</header>
 
 		<!-- Wrapper -->
 			<div id="wrapper">
-				<div id="main">
+				<main id="main" tabindex="-1">
 				{% for section in sections %}
-					<section id="{{ section.id }}">
+					<section id="{{ section.id }}" aria-labelledby="{{ section.id }}-heading">
 						{% if loop.first and site.banner %}
-						<div class="image main" data-position="center">
-							<img src="{{ site.banner }}" alt="" />
+						<div class="image main">
+							<img src="{{ site.banner }}" alt="{{ site.banner_alt }}" />
 						</div>
 						{% endif %}
 						<div class="container">
 							<header class="major">
-								<h2>{{ section.title }}</h2>
+								<h2 id="{{ section.id }}-heading">{{ section.title }}</h2>
 							</header>
 							{% include "sections/" + section.template + ".html" %}
 						</div>
 					</section>
 				{% endfor %}
-				</div>
+				</main>
 
-				<!-- Footer -->
-					<section id="footer">
-						<div class="container">
-							<ul class="copyright">
-								<li>&copy; {{ site.name }}. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
-					</section>
+				<footer id="footer">
+					<div class="container">
+						<p class="copyright">&copy; {{ site.name }}. Built with <a href="https://github.com/jrleja/jrleja.github.io">a small Python generator</a>.</p>
+					</div>
+				</footer>
 			</div>
 
-		<!-- Scripts -->
 		{% for script in site.scripts %}
 			<script src="{{ script }}"></script>
 		{% endfor %}

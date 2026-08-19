@@ -22,9 +22,24 @@ description: >-
   studying galaxy formation by combining deep JWST surveys with statistics and
   machine learning.
 
+# Absolute URL, used for the canonical link and the Open Graph tags. Needs the
+# trailing slash: og:image is built as url + og_image.
+url: https://jrleja.github.io/
+
 avatar: images/avatar.jpg
 banner: images/banner.jpg
+banner_alt: >-
+  A galaxy spectral energy distribution from the ultraviolet to the far infrared,
+  with observed photometry overlaid on a fitted model spectrum.
 stylesheet: assets/css/site.css
+
+# Link-preview card, 1200x630. Regenerate with tools/make-images.py after changing
+# the avatar or the palette.
+og_image: images/og-card.jpg
+
+# Address-bar colour; matches --sidebar-bg in each theme.
+theme_color: "#1d7a63"
+theme_color_dark: "#1c5f50"
 
 # `icon:` names a macro case in templates/icons.html; without one the label
 # renders as text, which is what ADS and CV want.
