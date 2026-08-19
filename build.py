@@ -2,9 +2,9 @@
 """
 Build jrleja.github.io from content/ + templates/ into a single static page.
 
-    python3 build.py                    # -> preview.html  (safe: not the live page)
-    python3 build.py --out index.html   # -> the published page
-    python3 -m http.server 8000         # then open localhost:8000/preview.html
+    python3 build.py                        # -> index.html, the published page
+    python3 build.py --out preview.html     # -> a scratch build (gitignored)
+    python3 -m http.server 8000             # then open localhost:8000
 
 Content model
 -------------
@@ -199,9 +199,9 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__.split("\n")[1])
     parser.add_argument(
         "--out",
-        default="preview.html",
-        help="output file (default: preview.html, which is gitignored; "
-        "pass --out index.html to write the published page)",
+        default="index.html",
+        help="output file (default: index.html, the published page; "
+        "pass --out preview.html for a scratch build, which is gitignored)",
     )
     args = parser.parse_args()
 

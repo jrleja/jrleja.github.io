@@ -9,9 +9,45 @@ every session.
 
 ## Status
 
-- **Next session:** 6 — metadata + accessibility (or 7, the live swap)
-- **Live site content:** Sept 2025, plus the Session 1 fixes
+- **Next session:** 6 — metadata + accessibility (favicon, Open Graph card)
+- **Live site:** **the new generated site is LIVE** as of 2026-08-17
 - **Last updated:** 2026-08-17
+
+**Session 7 — done, out of order. The swap is complete.** `index.html` is now built by
+`build.py`, and `build.py` with no arguments writes `index.html` (pass
+`--out preview.html` for a scratch build). Published page weight: **1.08 MB**, down from
+4.36 MB.
+
+Deleted 28 now-dead files, 4.56 MB: the whole HTML5 UP theme (`main.css`, its `sass/`
+sources, Font Awesome CSS and 1 MB of icon webfonts, jQuery and its five plugins), the
+superseded `ashtekar.png` and `nikko_cleri.png`, and the four remaining alumni photos.
+`assets/` went from 1.3 MB to 24 KB; `images/` from 15 MB to 1.1 MB.
+
+**Lesson worth keeping:** the first pass at finding dead files used
+`(?:src|href)["\']?(...)` — missing the `=` — so it matched almost nothing and
+confidently listed `avatar.jpg`, `site.js` and `CV.pdf` as unreferenced. Printing the
+list before deleting caught it. Never pipe a delete straight from a match.
+
+Also done this session, from Joel's review of the preview:
+
+- `avatar.jpg` and `marta_laska.jpeg` recropped square from the full-resolution
+  originals with the face at ~40–45% height. Both were tall portraits, so the CSS
+  centre-crop had been cutting the tops of their heads off. A square source means the
+  CSS crops nothing.
+- Section order is now **intro → press → group → outreach → research → contact**:
+  press promoted, research demoted pending its rewrite.
+- `(firstname).(lastname)@psu.edu` → a plain `mailto:` link.
+
+### Remaining sessions
+
+6 (metadata: favicon + OG card), 9–10 (rewrite Research), 11 (Talks & Media),
+12 (press refresh), 13 (selected publications), 14 (join the group), 15–16 (link check,
+final pass). Sessions 5 and 8 are complete.
+
+Still open: **B5** — the Feb 2024 press item's PopSci link was wrong (it pointed at the
+Nov 2023 story) and was dropped rather than guessed; Session 12 should find the real
+one. And the footer still credits HTML5 UP, whose code is now entirely gone — kept as an
+honest nod to the layout's lineage, but fine to drop from `templates/base.html`.
 
 **Session 5 — done.** Page weight **4.36 MB → 1.11 MB (74% smaller)**.
 
